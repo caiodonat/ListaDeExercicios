@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Main {
+public class estruturaSequencial {
 
     public static void end(){
         System.out.println("* * * * * * * * * * * *");
@@ -125,8 +125,11 @@ public class Main {
                 break;
 
             case 10: {
-
-
+                System.out.println("Temperatura em graus Celcius");
+                Scanner myObj = new Scanner(System.in);
+                float tempCel = myObj.nextFloat();
+                float tempFah = (tempCel * 9/5) + 32;
+                System.out.println("Temperatura em Fahrenheit: " + tempFah);
                 end();
             }
                 break;
