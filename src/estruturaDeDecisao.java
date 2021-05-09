@@ -147,54 +147,52 @@ public class estruturaDeDecisao {
 
             }//inacabado
             case 9 -> {
-                double[] num = new double[4];
+                double[][] num = new double[4][2];
                 double[] nSequancia = new double[4];
-                int num1=0;
-                int num2=0;
-                int num3=0;
-                int num4=0;
 
-                System.out.println("Digite 3 numeros");
+                System.out.println("Digite 4 numeros");
                 Scanner myObj = new Scanner(System.in);
 
-                for (int i=0; i<num.length; i++) { //guardando os valores
-                    num[i] = myObj.nextFloat();
+                for (int i = 0; i < num.length; i++) { //guardando os valores
+                    num[i][0] = myObj.nextFloat();
                 }
+                // decisao com 3 numeros
+                /*
+                num1 = num[0] > num[1] ? num1+1 : num1;
+                num1 = num[0] > num[2] ? num1+1 : num1;
 
-                if (num[0] > num[1]) { //posição no numero 1 (num[0])
-                    num1 = num1 + 1;
-                }
-                if (num[0] > num[2]) {
-                    num1 = num1 + 1;
-                }
+                num2 = num[1] > num[0] ? num2+1 : num2;
+                num2 = num[1] > num[2] ? num2+1 : num2;
 
-                if (num[1] > num[0]) { //posição no numero 2 (num[1])
-                    num2 = num2 + 1;
-                }
-                if (num[1] > num[2]) {
-                    num2 = num2 + 1;
-                }
+                num3 = num[2] > num[0] ? num3+1 : num3;
+                num3 = num[2] > num[1] ? num3+1 : num3;
+                 */
 
-                if (num[2] > num[0]) { //posição no numero 3 (num[2])
-                    num3 = num3 + 1;
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        num[i][1] = num[i][0] > num[j][0] ? num[i][1] + 1 : num[i][1];
+                    }
                 }
-                if (num[2] > num[1]) {
-                    num3 = num3 + 1;
-                }
-
-                if (num[2] > num[0]) { //posição no numero 4 (num[2])
-                    num3 = num3 + 1;
-                }
-                if (num[2] > num[1]) {
-                    num3 = num3 + 1;
-                }
-                System.out.println(num1 + " " + num2 + " " + num3 + " " + num4);
-
-                System.out.println(num[num1] + " " + num[num2] + " " + num[num3] + " " + num[num4]);
-
-
-
                 
+                //Verificação do numros dentro da matriz
+                /*
+                for (int i = 0; i < num.length; i++) {
+                    for (int j = 0; j < num[i].length; j++) {
+                        System.out.print(num[i][j] + " ");
+                    }
+                    System.out.println("");
+                }
+                System.out.println();
+                 */
+
+                for (int i=0; i<4; i++){
+                    for (int j=0; j<4; j++){
+                        if (num[j][1] == i){
+                            System.out.print(num[j][0] + ", ");
+                        }
+                    }
+                }
+
             }
         }
     }
