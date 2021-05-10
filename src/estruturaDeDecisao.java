@@ -95,57 +95,47 @@ public class estruturaDeDecisao {
                 System.out.println(numMenorF + ", é o Menor numero");
             }
             case 8 -> {
-                System.out.print("Na loja 1, ");
-                Scanner myObj = new Scanner(System.in);
-                System.out.println("Digite o valor do produto1");
-                float prod1L1 = myObj.nextFloat();
-                System.out.println("Digite o valor do produto2");
-                float prod2L1 = myObj.nextFloat();
-                System.out.println("Digite o valor do produto3");
-                float prod3L1 = myObj.nextFloat();
+                double [][][] lojasProdutos = new double[4][3][2];//lojasProdutos[P][L]
+                for (int i=0; i<3; i++) {
+                    for (int j=0; j<4; j++) {
+                        System.out.println("Qual o valor do pruduto " + (j+1) + ", na Loja " + (i+1));
+                        Scanner myObj = new Scanner(System.in);
+                        lojasProdutos [j][i][0] = myObj.nextFloat();
 
-                System.out.print("Na loja 2, ");
-                System.out.println("Digite o valor do produto1");
-                float prod1L2 = myObj.nextFloat();
-                System.out.println("Digite o valor do produto2");
-                float prod2L2 = myObj.nextFloat();
-                System.out.println("Digite o valor do produto3");
-                float prod3L2 = myObj.nextFloat();
-
-                System.out.print("Na loja 3, ");
-                System.out.println("Digite o valor do produto1");
-                float prod1L3 = myObj.nextFloat();
-                System.out.println("Digite o valor do produto2");
-                float prod2L3 = myObj.nextFloat();
-                System.out.println("Digite o valor do produto3");
-                float prod3L3 = myObj.nextFloat();
-
-                //float prod1 = Math.min(prod1L1, prod1L2);
-                //float prod1Melhor = Math.min(prod1, prod1L3);
-
+                    }
+                }
                 /*
-                float[] loja1 = {prod1L1, prod2L1, prod3L1};
-                float[] loja2 = {prod1L2, prod2L2, prod3L2};
-                float[] loja3 = {prod1L3, prod2L3, prod3L3};
+                for (int i=0; i<4; i++) {
+                    for (int j = 0; j<3; j++) {
+                        System.out.print(lojasProdutos[i][j][0] + " | ");
+                    }
+                    System.out.println();
+                }
                  */
-                float[] prod1 = {prod1L1, prod1L2, prod1L3};
-                float prod1Melhor;
 
-                for (int i=0; i<prod1.length; i++) {
-
-
-                    /*
-                    float prod1Melhor = Math.min(Math.min(loja1[0], loja2[0]), loja3[0]);
-                    float prod2Melhor = Math.min(Math.min(loja1[1], loja2[1]), loja3[1]);
-                    float prod3Melhor = Math.min(Math.min(loja1[2], loja2[2]), loja3[2]);
-
-                     */
+                System.out.println();
+                for (int i=0; i<4; i++) {
+                    for (int j=0; j<3; j++) {
+                        for (int q=0; q<3; q++) {
+                            lojasProdutos[i][j][1] = lojasProdutos[i][j][0] > lojasProdutos[i][q][0] ? lojasProdutos[i][j][1] + 1 : lojasProdutos[i][j][1];
+                        }
+                        //System.out.print(lojasProdutos[i][j][1] + " | ");
+                    }
+                    //System.out.println("");
                 }
 
-                System.out.println("Loja 1, Melhores produtos: ");
+                for (int i=0; i<3; i++){//[P][L]
+                    System.out.println("Produtos na Loja " + (i+1) + ": ");
+                    for (int j=0; j<4; j++){
+                        if (lojasProdutos[j][i][1] == 0){
+                            System.out.println("Produto " + (j+1) + ", Barato: R$" + lojasProdutos[j][i][0]);
+                        }else {
+                            System.out.println("Produto " + (j+1) + ", Caro: R$" + lojasProdutos[j][i][0]);
+                        }
+                    }
+                }
 
-
-            }//inacabado
+            }
             case 9 -> {
                 double[][] num = new double[4][2];
                 double[] nSequancia = new double[4];
@@ -156,34 +146,12 @@ public class estruturaDeDecisao {
                 for (int i = 0; i < num.length; i++) { //guardando os valores
                     num[i][0] = myObj.nextFloat();
                 }
-                // decisao com 3 numeros
-                /*
-                num1 = num[0] > num[1] ? num1+1 : num1;
-                num1 = num[0] > num[2] ? num1+1 : num1;
-
-                num2 = num[1] > num[0] ? num2+1 : num2;
-                num2 = num[1] > num[2] ? num2+1 : num2;
-
-                num3 = num[2] > num[0] ? num3+1 : num3;
-                num3 = num[2] > num[1] ? num3+1 : num3;
-                 */
 
                 for (int i = 0; i < 4; i++) {
                     for (int j = 0; j < 4; j++) {
                         num[i][1] = num[i][0] > num[j][0] ? num[i][1] + 1 : num[i][1];
                     }
                 }
-                
-                //Verificação do numros dentro da matriz
-                /*
-                for (int i = 0; i < num.length; i++) {
-                    for (int j = 0; j < num[i].length; j++) {
-                        System.out.print(num[i][j] + " ");
-                    }
-                    System.out.println("");
-                }
-                System.out.println();
-                 */
 
                 for (int i=0; i<4; i++){
                     for (int j=0; j<4; j++){
@@ -193,6 +161,29 @@ public class estruturaDeDecisao {
                     }
                 }
 
+
+            }
+            case 10 -> {
+                System.out.println("Em qual turma vc estuda?\nM-Matutino, V-Vespertino ou N-Noturno");
+                Scanner myObj = new Scanner(System.in);
+                char letraTurno = myObj.next().charAt(0);
+                switch (letraTurno){
+                    case 'v': {
+                        System.out.println("Bom Dia!");
+                    }break;
+
+                    case 'm': {
+                        System.out.println("Boa Tarde!");
+                    }break;
+
+                    case 'n': {
+                        System.out.println("Boa Noite!");
+                    }break;
+
+                    default:
+                        System.out.println("Valor inválido!");
+                        break;
+                }
             }
         }
     }
