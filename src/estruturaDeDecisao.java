@@ -8,15 +8,17 @@ public class estruturaDeDecisao {
         int exemploRequerido = myExemplo.nextInt();
 
         switch (exemploRequerido) {
-            case 1 -> {
+            case 1: {
+                float[] numeros = new float[2];
                 System.out.println("digite dois numeros");
-                Scanner myObj = new Scanner(System.in);
-                float numero1 = myObj.nextFloat();
-                float numero2 = myObj.nextFloat();
-                float resultado = Math.max(numero1, numero2);
+                for (int i=0; i<numeros.length; i++){
+                    Scanner myObj = new Scanner(System.in);
+                    numeros[i] = myObj.nextFloat();
+                }
+                float resultado = Math.max(numeros[0],numeros[1]);
                 System.out.println("Maior numero é: " + resultado);
             }
-            case 2 -> {
+            case 2: {
                 System.out.println("Digite um numero");
                 Scanner myObj = new Scanner(System.in);
                 float numero1 = myObj.nextFloat();
@@ -26,7 +28,7 @@ public class estruturaDeDecisao {
                     System.out.println(numero1 + ", è Negativo");
                 }
             }
-            case 3 -> {
+            case 3: {
                 System.out.println("Escolha entre 'M' ou 'F'");
                 Scanner myObj = new Scanner(System.in);
                 char letraSx = myObj.next().charAt(0); //metodo para agregar á variaveis tipo "Char"
@@ -38,7 +40,7 @@ public class estruturaDeDecisao {
                     System.err.println("Sexo inválido");
                 }
             }
-            case 4 -> {
+            case 4: {
                 System.out.println("Digite uma letra");
                 Scanner myObj = new Scanner(System.in);
                 char letra = myObj.next().charAt(0);
@@ -48,7 +50,7 @@ public class estruturaDeDecisao {
                     System.err.println(letra + ", É uma consoante");
                 }
             }
-            case 5 -> {
+            case 5: {
                 System.out.println("Digite a primeira notas parciais");
                 Scanner lNotaParc1 = new Scanner(System.in);
                 float notaParc1 = lNotaParc1.nextFloat();
@@ -67,7 +69,7 @@ public class estruturaDeDecisao {
                     System.out.println("Aprovado com Distinção");
                 }
             }
-            case 6 -> {
+            case 6: {
                 System.out.println("Digite 3 numeros");
                 Scanner myObj = new Scanner(System.in);
                 float num1 = myObj.nextFloat();
@@ -78,7 +80,7 @@ public class estruturaDeDecisao {
                 float numMaiorF = Math.max(numMaior1e2, num3);
                 System.out.println(numMaiorF + ", é o maior numero");
             }
-            case 7 -> {
+            case 7: {
                 System.out.println("Digite 3 numeros");
                 Scanner myObj = new Scanner(System.in);
                 float num1 = myObj.nextFloat();
@@ -94,7 +96,7 @@ public class estruturaDeDecisao {
                 System.out.println(numMaiorF + ", é o Maior numero");
                 System.out.println(numMenorF + ", é o Menor numero");
             }
-            case 8 -> {
+            case 8: {
                 double [][][] lojasProdutos = new double[4][3][2];//lojasProdutos[P][L]
                 for (int i=0; i<3; i++) {
                     for (int j=0; j<4; j++) {
@@ -104,14 +106,6 @@ public class estruturaDeDecisao {
 
                     }
                 }
-                /*
-                for (int i=0; i<4; i++) {
-                    for (int j = 0; j<3; j++) {
-                        System.out.print(lojasProdutos[i][j][0] + " | ");
-                    }
-                    System.out.println();
-                }
-                 */
 
                 System.out.println();
                 for (int i=0; i<4; i++) {
@@ -119,9 +113,7 @@ public class estruturaDeDecisao {
                         for (int q=0; q<3; q++) {
                             lojasProdutos[i][j][1] = lojasProdutos[i][j][0] > lojasProdutos[i][q][0] ? lojasProdutos[i][j][1] + 1 : lojasProdutos[i][j][1];
                         }
-                        //System.out.print(lojasProdutos[i][j][1] + " | ");
                     }
-                    //System.out.println("");
                 }
 
                 for (int i=0; i<3; i++){//[P][L]
@@ -136,7 +128,7 @@ public class estruturaDeDecisao {
                 }
 
             }
-            case 9 -> {
+            case 9: {
                 double[][] num = new double[4][2];
                 double[] nSequancia = new double[4];
 
@@ -163,7 +155,7 @@ public class estruturaDeDecisao {
 
 
             }
-            case 10 -> {
+            case 10: {
                 System.out.println("Em qual turma vc estuda?\nM-Matutino, V-Vespertino ou N-Noturno");
                 Scanner myObj = new Scanner(System.in);
                 char letraTurno = myObj.next().charAt(0);
