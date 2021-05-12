@@ -1,6 +1,5 @@
 import java.util.Scanner;
 /*
-5.Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.
 6.Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. Depois modifique o programa para que ele mostre os números um ao lado do outro.
 7.Faça um programa que leia 5 números e informe o maior número.
 8.Faça um programa que leia 5 números e informe a soma e a média dos números.
@@ -35,6 +34,7 @@ public class estruturaDeRepeticao {
                     }
                     System.out.println("Numero Invalido, por favor tente novamente.");
                 }
+                break;
             }
             case 2: {
                 boolean loginIgual = true;
@@ -52,6 +52,7 @@ public class estruturaDeRepeticao {
                     System.out.println("Usuario e Senha iguais, tente outra combinação");
                 }
                 System.out.println("Usuario e Senha validos.");
+                break;
             }
             case 3: {
                 boolean nomeTesteB = false;
@@ -158,6 +159,7 @@ public class estruturaDeRepeticao {
                 }
 
                 System.out.println("todas as informações são validas.");
+                break;
             }
             case 4: {
                 float popuPaisA = 80000F;//3%
@@ -170,26 +172,61 @@ public class estruturaDeRepeticao {
                     popuPaisB += popuPaisB * 0.015F;
                 }
                 System.out.println("Quantidade de anos necessarios: " + anos);
+                break;
             }
             case 5: {
-                float popuPaisB = 0F;
-                float taxaPaisB = 0.0F;
                 int anos = 0;
+                boolean repetir = false;
 
-                System.out.println("Simulador de crescimento populacional\nDigite a populaçao do pais A");
-                Scanner myObj = new Scanner(System.in);
-                float popuPaisA = myObj.nextFloat();
-                System.out.println("Digita a Taxa de crescimento do Pais A");
-                float taxaPaisA = myObj.nextFloat();
+                do {
+                    Scanner myObj = new Scanner(System.in);
+                    System.out.println("Simulador de crescimento populacional\nDigite a populaçao do pais A");
+                    float popuPaisA = myObj.nextFloat();
+                    System.out.println("Digita a Taxa de crescimento do Pais A");
+                    float taxaPaisA = myObj.nextFloat();
+
+                    System.out.println("Digite a populaçao do pais B");
+                    float popuPaisB = myObj.nextFloat();
+                    System.out.println("Digita a Taxa de crescimento do Pais B");
+                    float taxaPaisB = myObj.nextFloat();
 
 
-                while (popuPaisA<popuPaisB){
-                    anos ++;
-                    popuPaisA += popuPaisA * taxaPaisA;
-                    popuPaisB += popuPaisB * taxaPaisB;
+                    while (popuPaisA < popuPaisB) {
+                        anos++;
+                        popuPaisA += popuPaisA * taxaPaisA;
+                        popuPaisB += popuPaisB * taxaPaisB;
+                    }
+                    System.out.println("Quantidade de anos necessarios: " + anos);
+                    System.out.println("\nDeseja repetir o simulador?\n('S' - Sim, 'N' - Não)");
+                    char repetirChar = myObj.next().charAt(0);
+
+                    switch (repetirChar){
+                        case 's':{
+                            repetir = true;
+                            break;
+                        }
+                        case 'n':{
+                            repetir = false;
+                            break;
+                        }
+                    }
+                }while (repetir);
+                break;
+            }
+            case 6: {
+                for (int i=1; i<=20; i++){
+                    System.out.println(i);
                 }
-                System.out.println("Quantidade de anos necessarios: " + anos);
-
+                for (int i=1; i<=20; i++){
+                    if (i==20){
+                    System.out.print(i);
+                }else{
+                        System.out.print(i + ", ");
+                    }
+                }
+            }
+            case 7: {
+                
             }
         }
     }
