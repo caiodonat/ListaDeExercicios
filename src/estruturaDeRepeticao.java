@@ -1,6 +1,5 @@
 import java.util.Scanner;
 /*
-7.Faça um programa que leia 5 números e informe o maior número.
 8.Faça um programa que leia 5 números e informe a soma e a média dos números.
 9.Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
 10.Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.
@@ -244,7 +243,26 @@ public class estruturaDeRepeticao {
                 }
                 break;
             }
-            
+            case 8: {
+                float[] numeros = new float[5];
+                float numSoma = 0;
+                for (int i=0; i<numeros.length; i++){
+                    Scanner myObj = new Scanner(System.in);
+                    System.out.println("Digite o valor numero "+(i+1));
+                    numeros[i] = myObj.nextFloat();
+                }
+
+                for (int i=0; i<5; i++){
+                    numSoma = numSoma + numeros[i];
+                }
+
+                float numMedia = numSoma/5;
+
+                System.out.println("Soma de todos os numeros: " + numSoma);
+                System.out.println("Media de todos os numeros: " + numMedia);
+
+                break;
+            }
         }
     }
 }
