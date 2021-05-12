@@ -103,7 +103,6 @@ public class estruturaDeDecisao {
                         System.out.println("Qual o valor do pruduto " + (j+1) + ", na Loja " + (i+1));
                         Scanner myObj = new Scanner(System.in);
                         lojasProdutos [j][i][0] = myObj.nextFloat();
-
                     }
                 }
 
