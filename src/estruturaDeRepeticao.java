@@ -1,6 +1,5 @@
 import java.util.Scanner;
 /*
-9.Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
 10.Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.
 
  */
@@ -265,6 +264,26 @@ public class estruturaDeRepeticao {
             case 9: {
                 for (int i=1; i<51; i+=2){
                     System.out.print(i + ", ");
+                }
+                break;
+            }
+            case 10: {
+                int[] numeros = new int[2];
+                for (int i=0; i< numeros.length; i++){
+                    System.out.println("Digite o valor " + (i+1));
+                    Scanner myObj = new Scanner(System.in);
+                    numeros[i] = myObj.nextInt();
+                }
+                if (numeros[0]<numeros[1]) {
+                    while (numeros[0] < (numeros[1] - 1)) {
+                        numeros[0] += 1;
+                        System.out.println(numeros[0]);
+                    }
+                }else {
+                    while (numeros[1] < (numeros[0] - 1)) {
+                    numeros[1] += 1;
+                    System.out.println(numeros[1]);
+                    }
                 }
                 break;
             }
