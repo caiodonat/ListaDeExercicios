@@ -1,6 +1,5 @@
 import java.util.Scanner;
 /*
-6.Faça um programa que imprima na tela os números de 1 a 20, um abaixo do outro. Depois modifique o programa para que ele mostre os números um ao lado do outro.
 7.Faça um programa que leia 5 números e informe o maior número.
 8.Faça um programa que leia 5 números e informe a soma e a média dos números.
 9.Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
@@ -224,10 +223,28 @@ public class estruturaDeRepeticao {
                         System.out.print(i + ", ");
                     }
                 }
+                break;
             }
             case 7: {
-                
+                float[][] numeros = new float[5][2];
+                for (int i=0; i< numeros.length; i++){
+                    Scanner myObj = new Scanner(System.in);
+                    System.out.println("Digite o valor numero "+(i+1));
+                    numeros[i][0] = myObj.nextFloat();
+                }
+                for (int i=0; i<5; i++){
+                    for (int j=0; j<5; j++){
+                        numeros[i][1] = numeros[i][0] > numeros[j][0] ? numeros[i][1] + 1 : numeros[i][1];
+                    }
+                }
+                for (int i=0; i<5; i++){
+                    if (numeros[i][1] == 4){
+                        System.out.println("Maior numero é o: " +i +", equivale: "+ numeros[i][0]);
+                    }
+                }
+                break;
             }
+            
         }
     }
 }
