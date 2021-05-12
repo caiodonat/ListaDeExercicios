@@ -1,6 +1,5 @@
 import java.util.Scanner;
 /*
-8.Faça um programa que leia 5 números e informe a soma e a média dos números.
 9.Faça um programa que imprima na tela apenas os números ímpares entre 1 e 50.
 10.Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.
 
@@ -261,6 +260,12 @@ public class estruturaDeRepeticao {
                 System.out.println("Soma de todos os numeros: " + numSoma);
                 System.out.println("Media de todos os numeros: " + numMedia);
 
+                break;
+            }
+            case 9: {
+                for (int i=1; i<51; i+=2){
+                    System.out.print(i + ", ");
+                }
                 break;
             }
         }
