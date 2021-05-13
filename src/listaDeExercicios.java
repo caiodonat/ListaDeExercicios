@@ -1,7 +1,5 @@
 import java.util.Scanner;
-/*
-10Faça um Programa que leia dois vetores com 10 elementos cada. Gere um terceiro vetor de 20 elementos, cujos valores deverão ser compostos pelos elementos intercalados dos dois outros vetores.
- */
+
 public class listaDeExercicios {
     public static void main(String[] args) {
         System.out.println("Seja muito bem vindo ha nossa 4 lista de exercicios,\nQual exemplo vc deseja reproduzir?");

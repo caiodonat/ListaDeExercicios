@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class estruturaDeRepeticao {
+public class estruturaDeRepeticao3 {
     public static void main(String[] args){
         System.out.println("Seja muito bem vindo ha nossa 3 lista de exercicios,\nQual exemplo vc deseja reproduzir?");
         Scanner numeroDigitado = new Scanner(System.in);

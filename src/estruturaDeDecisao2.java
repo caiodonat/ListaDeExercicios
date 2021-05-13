@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class estruturaDeDecisao {
+public class estruturaDeDecisao2 {
 
     public static void main(String[] args){
         System.out.println("Digite o numero exemplo a ser executado");
