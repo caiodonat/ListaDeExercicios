@@ -1,8 +1,5 @@
 import java.util.Scanner;
-/*
-10.Faça um programa que receba dois números inteiros e gere os números inteiros que estão no intervalo compreendido por eles.
 
- */
 public class estruturaDeRepeticao {
     public static void main(String[] args){
         System.out.println("Seja muito bem vindo ha nossa 3 lista de exercicios,\nQual exemplo vc deseja reproduzir?");
