@@ -154,6 +154,7 @@ public class listaDeExercicios {
                     }
                 }
                 System.out.println("Alunos com media maior ou iqual a 7: " + alunosMedia7);
+                break;
             }
             case 7: {
                 int[] numDigitados = new int[5];
@@ -178,6 +179,7 @@ public class listaDeExercicios {
                         System.out.print(numDigitados[i] + ", ");
                     }
                 }
+                break;
             }
             case 8: {
                 float[][] idadeAltura = new float[5][2];
@@ -192,6 +194,7 @@ public class listaDeExercicios {
                 for (int i=4; i>-1; i--){
                     System.out.println("Pessoa " + (i+1) + "\nIdade: " + idadeAltura[i][0] + " | Altura: " + idadeAltura[i][1]);
                 }
+                break;
             }
             case 9: {
                 int[] numAll = new int[10];
@@ -203,6 +206,7 @@ public class listaDeExercicios {
                     somaQuadr += (numAll[i] * numAll[i]);
                 }
                 System.out.println("Soma total: " + somaQuadr);
+                break;
             }
             case 10: {
                 float[] vetor1 = new float[3];
@@ -234,6 +238,7 @@ public class listaDeExercicios {
                 for (int i=0; i< vetoresUnidos.length; i++){
                     System.out.print(vetoresUnidos[i] + ", ");
                 }
+                break;
             }
         }
     }
