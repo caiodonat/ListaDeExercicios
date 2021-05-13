@@ -1,12 +1,5 @@
-import jdk.swing.interop.SwingInterOpUtils;
-
-import java.util.Arrays;
 import java.util.Scanner;
 /*
-6Faça um Programa que peça as quatro notas de 10 alunos, calcule e armazene num vetor a média de cada aluno, imprima o número de alunos com média maior ou igual a 7.0.
-7Faça um Programa que leia um vetor de 5 números inteiros, mostre a soma, a multiplicação e os números.
-8Faça um Programa que peça a idade e a altura de 5 pessoas, armazene cada informação no seu respectivo vetor. Imprima a idade e a altura na ordem inversa a ordem lida.
-9Faça um Programa que leia um vetor A com 10 números inteiros, calcule e mostre a soma dos quadrados dos elementos do vetor.
 10Faça um Programa que leia dois vetores com 10 elementos cada. Gere um terceiro vetor de 20 elementos, cujos valores deverão ser compostos pelos elementos intercalados dos dois outros vetores.
  */
 public class listaDeExercicios {
@@ -136,7 +129,111 @@ public class listaDeExercicios {
                 break;
             }
             case 6: {
+                float[][] notasAlunos = new float[10][4];
+                float[] alunosMedia = new float[10];
+                int alunosMedia7 = 0;
 
+                for (int i=0; i<notasAlunos.length; i++){
+                    System.out.println("Aluno " + (i+1) + ": ");
+                    for (int j=0; j<4; j++){
+                        System.out.println((j+1) + " Bimestre, ");
+                        Scanner myObj = new Scanner(System.in);
+                        notasAlunos[i][j] = myObj.nextFloat();
+                    }
+                }
+                for (int i=0; i<10; i++){
+                    for (int j=0; j<4; j++){
+                        alunosMedia[i] = alunosMedia[i] + notasAlunos[i][j];
+                    }
+                    alunosMedia[i] = (alunosMedia[i]/4);
+                }
+                System.out.println("Alunos com nota maior que 7.0: ");
+                for (int i=0; i<10; i++){
+                    if(alunosMedia[i] >= 7){
+                        alunosMedia7++;
+                    }
+                }
+                System.out.println("Alunos com media maior ou iqual a 7: " + alunosMedia7);
+            }
+            case 7: {
+                int[] numDigitados = new int[5];
+                float soma = 0;
+                float multip = 1;
+
+                for (int i=0; i<numDigitados.length; i++){
+                    System.out.println("Digite um numero (" + (i+1) + ")");
+                    Scanner myObj = new Scanner(System.in);
+                    numDigitados[i] = myObj.nextInt();
+                    soma = soma + numDigitados[i];
+                }
+                for (int i=0; i< numDigitados.length; i++){
+                     multip = multip * numDigitados[i];
+                }
+                System.out.println("Soma total dos numeros: " + soma + "\nMultiplicação de todos os numeros: " + multip);
+
+                for (int i=0; i< numDigitados.length; i++){
+                    if (i == 4) {
+                        System.out.print(numDigitados[i]);
+                    }else {
+                        System.out.print(numDigitados[i] + ", ");
+                    }
+                }
+            }
+            case 8: {
+                float[][] idadeAltura = new float[5][2];
+
+                for (int i=0; i<5; i++){
+                    System.out.println("Pessoa " + (i+1) + "\nIdade: ");
+                    Scanner myObj = new Scanner(System.in);
+                    idadeAltura[i][0] = myObj.nextFloat();
+                    System.out.println("Altura: ");
+                    idadeAltura[i][1] = myObj.nextFloat();
+                }
+                for (int i=4; i>-1; i--){
+                    System.out.println("Pessoa " + (i+1) + "\nIdade: " + idadeAltura[i][0] + " | Altura: " + idadeAltura[i][1]);
+                }
+            }
+            case 9: {
+                int[] numAll = new int[10];
+                int somaQuadr = 0;
+                for (int i=0; i<numAll.length; i++){
+                    System.out.println("Digite um numero (" + (i+1) + ")");
+                    Scanner myObj = new Scanner(System.in);
+                    numAll[i] = myObj.nextInt();
+                    somaQuadr += (numAll[i] * numAll[i]);
+                }
+                System.out.println("Soma total: " + somaQuadr);
+            }
+            case 10: {
+                float[] vetor1 = new float[3];
+                float[] vetor2 = new float[3];
+                float[] vetoresUnidos = new float[vetor1.length+vetor2.length];
+
+                System.out.println("Vetor 1");
+                for (int i=0; i<vetor1.length; i++){
+                    System.out.println((i+1) + " Numero");
+                    Scanner myObj = new Scanner(System.in);
+                    vetor1[i] = myObj.nextFloat();
+                }
+                System.out.println("Vetor 2");
+                for (int i=0; i<vetor2.length; i++){
+                    System.out.println((i+1) + " Numero");
+                    Scanner myObj = new Scanner(System.in);
+                    vetor2[i] = myObj.nextFloat();
+                }
+                System.out.println("Vetores Unificados");
+                int n=0;
+                int j=0;
+                while (n<vetoresUnidos.length){
+                    vetoresUnidos[n] = vetor1[j];
+                    n++;
+                    vetoresUnidos[n] = vetor2[j];
+                    n++;
+                    j++;
+                }
+                for (int i=0; i< vetoresUnidos.length; i++){
+                    System.out.print(vetoresUnidos[i] + ", ");
+                }
             }
         }
     }
