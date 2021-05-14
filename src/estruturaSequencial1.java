@@ -98,7 +98,154 @@ public class estruturaSequencial1 {
                 System.out.println("Temperatura em Fahrenheit: " + tempFah);
                 break;
             }
+            case 11: {
+                int numI1 = 0;
+                int numI2 = 0;
+                int numR = 0;
+                System.out.println("Digite o 1 Numero Inteiro");
+                Scanner myObj = new Scanner(System.in);
+                numI1 = myObj.nextInt();
 
+                System.out.println("Digite o 2 Numero Inteiro");
+                numI2 = myObj.nextInt();
+
+                do {
+                    System.out.println("Digite o um Numero Real");
+                    numR = myObj.nextInt();
+                    if (numR<0){
+                        System.out.println("(Um numero real é sempre possitivo)");
+                    }
+                }while (numR<0);
+
+                System.out.println("a: " + (numI1 * 2 *(numI2/2)));
+                System.out.println("b: " + ((numI1 * 3) + numR));
+                System.out.println("c: " + (numR * numR));
+                break;
+            }
+            case 12: {
+                System.out.println("Digite sua altura");
+                Scanner myObj = new Scanner(System.in);
+                float altura = myObj.nextFloat();
+                System.out.printf("Seu peso ideal é: %.2f Quilos", ((72.7*altura)-58));//printF : "bla bla bla: '%.2f' bla bla", nomeDaVariavel (2:quantidades de casa apos a ',')(a espreção entre '' sera subistituida pela variavel citado apos a ',')
+                break;
+            }
+            case 13: {
+                float altura = 0;
+                char sexo;
+
+                System.out.println("Qual sua altura?");
+                Scanner myObj = new Scanner(System.in);
+                altura = myObj.nextFloat();
+
+                while (true) {
+                    System.out.println("Qual é seu sexo?");
+                    sexo = myObj.next().charAt(0);
+
+                    if (sexo == 'f') {
+                        System.out.printf("Seu peso ideal é: %.2f Kg", ((62.1 * altura) - 44.7));
+                        break;
+                    } else if (sexo == 'm') {
+                        System.out.printf("Seu peso ideal é: %.2f Kg", ((72.7 * altura) - 58));
+                        break;
+                    } else {
+                        System.err.println("Alguma informação digitada é invalida.");
+                    }
+                }
+                break;
+            }
+            case 14: {
+                System.out.println("Quantos quilos de peixe?");
+                Scanner myObj = new Scanner(System.in);
+                float quilosP = myObj.nextFloat();
+                if (quilosP > 50){
+                    float excesso = (quilosP - 50);
+                    System.out.println(excesso + " Kg, multa de R$ " + (excesso*4));
+                }else{
+                    System.out.println("Nao havera multa em sua mercadoria.");
+                }
+                break;
+            }
+            case 15: {
+                System.out.println("quanto você ganha por hora?");
+                Scanner myObj = new Scanner(System.in);
+                float ganhoPHora = myObj.nextFloat();
+                System.out.println("Quantas horas você trabalhou esse mês?");
+                float Horas = myObj.nextFloat();
+                double ganhoMes = ganhoPHora * Horas;
+                System.out.println("+ Salário Bruto : R$" +ganhoMes);
+                System.out.println("- IR (11%) : R$" + (ganhoMes * 0.11));
+                System.out.println("- INSS (8%) : R$" + (ganhoMes * 0.08));
+                System.out.println("- Sindicato ( 5%) : R$" + (ganhoMes * 0.05));
+                System.out.println("= Salário Liquido : R$" + (ganhoMes * 0.76));
+                break;
+            }
+            case 16: {
+                int metrosLitros = 3;
+                int lataLitros = 18;//3m - 1l
+                float valorLata = 80f;// 9m - 3l
+                int latasC = 1;
+
+                System.out.println("Quantos metros quadrados deseja pintar?");
+                Scanner myObj = new Scanner(System.in);
+                float areaQuad = myObj.nextFloat();
+                for (float litrosC =  (areaQuad/metrosLitros); litrosC>18; litrosC=(litrosC-18)){
+                    latasC = latasC + 1;
+                }
+                System.out.println("Latas necessarias: " + latasC + "\nTotal pela tinta: R$" + (latasC * valorLata));
+                break;
+            }
+            case 17: {
+                int metrosLitros = 6;
+
+                int lataLitros = 18;
+                float valorLata = 80.00f;
+
+                float galaoLitros = 3.60f;
+                float valorGalao = 25.00f;
+                int latasC = 0;
+                int galaoC = 0;
+
+                System.out.println("Quantos metros quadrados deseja pintar?");
+                Scanner myObj = new Scanner(System.in);
+                float areaQuad = myObj.nextFloat();
+                float litrosC = areaQuad/metrosLitros;
+
+                do {
+                    if (lataLitros < litrosC) {
+                        latasC++;
+                        litrosC = litrosC - lataLitros;
+                    } else if (lataLitros > litrosC) {
+                        galaoC++;
+                        litrosC = litrosC - galaoLitros;
+                    }
+                }while (litrosC > 0);
+
+                System.out.println("Latas necessarias: " + latasC);
+                System.out.println("Galoes necessarios: " + galaoC);
+                System.out.println("Total pela tinta: R$ " + ((latasC * valorLata) + (galaoC * valorGalao)));
+
+                break;
+            }
+            case 18: {
+                System.out.println("Qual o tamanho do arquivo em MB?");
+                Scanner myObj = new Scanner(System.in);
+                float tamanhaArquivo = myObj.nextFloat();
+                System.out.println("Qual é sua velocidade de internet? (em Mbps)");
+                float velocidadeInt = myObj.nextFloat();
+                int segundosMinutos = 60;
+                float segundosTotal = tamanhaArquivo/velocidadeInt;
+                int minutos = 0;
+                do {
+                    if (segundosTotal > segundosMinutos) {
+                        minutos++;
+                        segundosTotal = segundosTotal - segundosMinutos;
+                    }
+                }while (segundosTotal > segundosMinutos);
+                System.out.print("Tempo aproximado de download: " + minutos + " Minutos");
+                System.out.printf(" e %.0f", segundosTotal);
+                System.out.print(" segundos");
+                break;
+            }
         }
     }
 }

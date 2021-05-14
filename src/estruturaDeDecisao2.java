@@ -1,6 +1,12 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class estruturaDeDecisao2 {
+
+    static void tela(String x){
+        System.out.println("Nota semestral do aluno: " + x);
+    }
 
     public static void main(String[] args){
         System.out.println("Digite o numero exemplo a ser executado");
@@ -17,6 +23,7 @@ public class estruturaDeDecisao2 {
                 }
                 float resultado = Math.max(numeros[0],numeros[1]);
                 System.out.println("Maior numero é: " + resultado);
+                break;
             }
             case 2: {
                 System.out.println("Digite um numero");
@@ -27,6 +34,7 @@ public class estruturaDeDecisao2 {
                 } else {
                     System.out.println(numero1 + ", è Negativo");
                 }
+                break;
             }
             case 3: {
                 System.out.println("Escolha entre 'M' ou 'F'");
@@ -39,6 +47,7 @@ public class estruturaDeDecisao2 {
                 } else {
                     System.err.println("Sexo inválido");
                 }
+                break;
             }
             case 4: {
                 System.out.println("Digite uma letra");
@@ -49,6 +58,7 @@ public class estruturaDeDecisao2 {
                 } else {
                     System.err.println(letra + ", É uma consoante");
                 }
+                break;
             }
             case 5: {
                 System.out.println("Digite a primeira notas parciais");
@@ -68,6 +78,7 @@ public class estruturaDeDecisao2 {
                 } else  if (media == 10) {
                     System.out.println("Aprovado com Distinção");
                 }
+                break;
             }
             case 6: {
                 System.out.println("Digite 3 numeros");
@@ -79,6 +90,7 @@ public class estruturaDeDecisao2 {
                 float numMaior1e2 =  Math.max(num1, num2);
                 float numMaiorF = Math.max(numMaior1e2, num3);
                 System.out.println(numMaiorF + ", é o maior numero");
+                break;
             }
             case 7: {
                 System.out.println("Digite 3 numeros");
@@ -95,6 +107,7 @@ public class estruturaDeDecisao2 {
 
                 System.out.println(numMaiorF + ", é o Maior numero");
                 System.out.println(numMenorF + ", é o Menor numero");
+                break;
             }
             case 8: {
                 double [][][] lojasProdutos = new double[4][3][2];//lojasProdutos[P][L]
@@ -125,7 +138,7 @@ public class estruturaDeDecisao2 {
                         }
                     }
                 }
-
+                break;
             }
             case 9: {
                 double[][] num = new double[4][2];
@@ -151,8 +164,7 @@ public class estruturaDeDecisao2 {
                         }
                     }
                 }
-
-
+                break;
             }
             case 10: {
                 System.out.println("Em qual turma vc estuda?\nM-Matutino, V-Vespertino ou N-Noturno");
@@ -175,7 +187,179 @@ public class estruturaDeDecisao2 {
                         System.out.println("Valor inválido!");
                         break;
                 }
+                break;
             }
+            case 11: {
+                System.out.println("Salario do atual do funcionario");
+                Scanner myObj = new Scanner(System.in);
+                double salarioAtual = myObj.nextFloat();
+                double salarioNovo = 0;
+                double percentual = 0;
+                double valorAlmento = 0;
+
+                 if (salarioAtual >= 1500){
+                     percentual = 5;
+                     valorAlmento = salarioAtual * (percentual/100);
+                     salarioNovo = salarioAtual + valorAlmento;
+                 }else if (salarioAtual >= 700){
+                     percentual = 10;
+                     valorAlmento = salarioAtual * (percentual/100);
+                     salarioNovo = salarioAtual + valorAlmento;
+                 }else if(salarioAtual >= 280){
+                     percentual = 15;
+                     valorAlmento = salarioAtual * (percentual/100);
+                     salarioNovo = salarioAtual + valorAlmento;
+                 }else if(salarioAtual > 0){
+                     percentual = 20;
+                     valorAlmento = salarioAtual * (percentual/100);
+                     salarioNovo = salarioAtual + valorAlmento;
+                 }else if(salarioAtual <= 0){
+                     System.err.println("Não é um funcionario é Escravo!!");
+                 }
+                System.out.println("Salario antes do reajuste: R$" + salarioAtual);
+                System.out.println("Percentual de almento aplicado: " + percentual + "%");
+                System.out.printf("Valor do aumento: R$%.2f", valorAlmento);
+                System.out.println("\nNovo salário, após o aumento: R$" + salarioNovo);
+                break;
+            }
+            case 12: {
+                System.out.println("quanto você ganha por hora e o número de horas trabalhadas no mês?");
+                Scanner myObj = new Scanner(System.in);
+                float ganhoHora = myObj.nextFloat();
+                float horas = myObj.nextFloat();
+
+                double salarioBruto = ganhoHora * horas;
+                double percentualIR = 0;
+                double valorIR = 0;
+                double percentualINSS = 10;
+                double valorINSS = 0;
+                double percentualFGTS = 11;
+                double valorFGTS = 0;
+                double totalDescontos = 0;
+                double salarioLiquido = 0;
+
+                if (salarioBruto <= 900){
+                    percentualIR = 0;
+                }else if (salarioBruto <= 1500){
+                    percentualIR = 5;
+                }else if(salarioBruto <= 2500){
+                    percentualIR = 10;
+                }else if(salarioBruto > 2500){
+                    percentualIR = 20;
+                }else if(salarioBruto <= 0){
+                    System.err.println("Não é um funcionario é Escravo!!");
+                    break;
+                }
+                valorIR = salarioBruto * (percentualIR/100);
+                valorINSS = salarioBruto * (percentualINSS/100);
+                valorFGTS = salarioBruto * (percentualFGTS/100);
+                totalDescontos = valorIR + valorINSS;
+                salarioLiquido = salarioBruto - totalDescontos;
+
+                System.out.println("Salario bruto (" + ganhoHora + " * " + horas + ")  : R$" + salarioBruto);
+                System.out.println("(-)IR ("+percentualIR+"%)                : R$" + valorIR);
+                System.out.println("(-)INSS ("+percentualINSS+"%)              : R$" + valorINSS);
+                System.out.println("FGTS ("+percentualFGTS+"%)                 : R$" + valorFGTS);
+                System.out.println("Total descontos              : R$" + totalDescontos);
+                System.out.println("Salario liquido              : R$" + salarioLiquido);
+                break;
+            }
+            case 13: {
+                int diaSemana = 0;
+                do {
+                    System.out.println("Digiate um numero correspondente ao dia da semana");
+                    Scanner myObj = new Scanner(System.in);
+                    diaSemana = myObj.nextInt();
+
+                    if (diaSemana > 7){
+                        System.out.println("Numero digitado e invalido");
+                    }
+                } while (diaSemana > 7);
+
+                switch (diaSemana){
+                    case 1: {
+                        System.out.println("Domingo");
+                        break;
+                    }
+                    case 2: {
+                        System.out.println("Segunda-Feira");
+                        break;
+                    }
+                    case 3: {
+                        System.out.println("Terça-Feira");
+                        break;
+                    }
+                    case 4: {
+                        System.out.println("Quarta-Feira");
+                        break;
+                    }
+                    case 5: {
+                        System.out.println("Quinta-Feira");
+                        break;
+                    }
+                    case 6: {
+                        System.out.println("Sexta-Feira");
+                        break;
+                    }
+                    case 7: {
+                        System.out.println("Sabado");
+                        break;
+                    }
+                }
+                break;
+            }
+            case 14: {
+                System.out.println("Digite a nota do aluno no 1 trimestre");
+                Scanner myObj = new Scanner(System.in);
+                float nota1B = myObj.nextFloat();
+                System.out.println("Digite a nota do aluno no 2 trimestre");
+                float nota2B = myObj.nextFloat();
+                float notaEUA = 0;
+
+                float notaF = (nota1B + nota2B) / 2;
+                notaEUA = notaF * 10;
+
+
+                    if (notaEUA == 100) {
+                        tela("S");
+                    } else if (notaEUA >= 97) {
+                        tela("A+");
+                    } else if (notaEUA >= 94.5) {
+                        tela("A");
+                    } else if (notaEUA >= 90) {
+                        tela("A-");
+                    } else if (notaEUA >= 87) {
+                        tela("B+");
+                    } else if (notaEUA >= 84.5) {
+                        tela("B");
+                    } else if (notaEUA >= 80) {
+                        tela("B-");
+                    } else if (notaEUA >= 77) {
+                        tela("C+");
+                    } else if (notaEUA >= 74.5) {
+                        tela("C");
+                    } else if (notaEUA >= 70) {
+                        tela("C-");
+                    } else if (notaEUA >= 67) {
+                        tela("D+");
+                    } else if (notaEUA >= 64.5) {
+                        tela("D");
+                    } else if (notaEUA >= 60) {
+                        tela("D-");
+                    } else if (notaEUA >= 57) {
+                        tela("E+");
+                    } else if (notaEUA >= 54.5) {
+                        tela("E");
+                    } else if (notaEUA >= 50) {
+                        tela("E-");
+                    } else if (notaEUA < 50) {
+                        System.out.println("Nota F");
+                    } else {
+                        System.err.println("Valor invalido");
+                    }
+
+            }//Tem que melhorar
+
         }
     }
 }
