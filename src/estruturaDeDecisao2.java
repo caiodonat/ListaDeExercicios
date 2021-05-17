@@ -12,7 +12,9 @@ public class estruturaDeDecisao2 {
         System.out.println("Digite o numero exemplo a ser executado");
         Scanner myExemplo = new Scanner(System.in);
         int exemploRequerido = myExemplo.nextInt();
-
+/*
+Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
+ */
         switch (exemploRequerido) {
             case 1: {
                 float[] numeros = new float[2];
@@ -359,7 +361,97 @@ public class estruturaDeDecisao2 {
                     }
 
             }//Tem que melhorar
+            case 15: {
+                float[] lados = new float[3];
+                int ladosIguais = 0;
 
+                for (int i=0;  i<lados.length; i++){
+                    System.out.println("Tamanho do lado numero " + (i+1));
+                    Scanner myObj = new Scanner(System.in);
+                    lados[i] = myObj.nextFloat();
+                }
+                for (int i=0;  i<lados.length; i++){
+                    for (int j=0;  j<lados.length; j++){
+
+                        if (j == i){
+                        }else if (j != i){
+                            if (lados[i] == lados[j]) {
+                                ladosIguais++;
+                            }
+                        }
+                    }
+                }
+                switch (ladosIguais){
+                    case 0: {
+                        System.out.println("Triângulo Escaleno");
+                        break;
+                    }
+                    case 2: {
+                        System.out.println("Triângulo Isósceles");
+                        break;
+                    }
+                    case 6: {
+                        System.out.println("Triângulo Equilátero");
+                        break;
+                    }
+                }
+                System.out.println(ladosIguais);//0Ig= 0, 2Ig= 2, 3Ig = 6.
+                break;
+            }
+            case 16: {
+                double[] numerosEqua = new double[3];
+                char[] letrasEqua = {'A', 'B', 'C'};
+                double delta, resultado1, resultado2 = 0;
+
+                for (int i=0; i< numerosEqua.length; i++){
+                    System.out.println("Dite o valor de " + letrasEqua[i]);
+                    Scanner myObj = new Scanner(System.in);
+                    numerosEqua[i] = myObj.nextFloat();
+                    if (numerosEqua[0] == 0){
+                        System.out.println("A equação não é do segundo grau");
+                        break;
+                    }
+                }//ax²+bx+c
+
+                delta = (Math.pow(numerosEqua[1], 2)) - (4 * numerosEqua[0] * numerosEqua[2]);
+                if (delta < 0){
+                    System.out.println("A equação não possui raizes reais");
+                    break;
+                }
+                if (delta == 0){
+                    resultado1 = ((numerosEqua[1] * (-1)) + Math.sqrt(delta)) / 2 * numerosEqua[0];
+                    System.out.println("a equação possui apenas uma raiz real: " + resultado1);
+                }
+                if (delta > 0){
+                    resultado1 = ((numerosEqua[1] * (-1)) + Math.sqrt(delta)) / 2 * numerosEqua[0];
+                    resultado2 = ((numerosEqua[1] * (-1)) - Math.sqrt(delta)) / 2 * numerosEqua[0];
+                    System.out.println("A equação possui duas raiz reais: " + resultado1 + ", " + resultado2);
+                }
+                break;
+            }
+            case 17: {
+                //se o ano não terminar em 00 e for divisível por 4 =|= 1988 : 1988/4 = 497 (numR)
+                //Um número é divisível por 4 quando a sua dezena é divisível por 4 =|= 1988 : 1988/4 = 497 (numR) | 19'88', 88/4 = 22 (numR)
+                //terminado em 00 dividido por 400 for numR =|= 1900 : 1900/400 = 4.75 XX / 2000/400 = 5 numR
+                //if > 1200 | 12 = multiplo 4 ?(3*4)
+
+                int ano;
+                int soma = 4;
+                System.out.println("Qual ano?");
+                Scanner myObj = new Scanner(System.in);
+                ano = myObj.nextInt();
+
+                for (int i=4; i<ano; i+=4){
+                    if (ano == i){
+                        System.out.println("Ano bissexto: " + ano);
+                    }
+                }
+                System.out.println("Ano não bissexto: " + ano);
+                break;
+            }
         }
     }
+
+
+
 }
