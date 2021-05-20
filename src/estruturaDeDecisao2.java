@@ -1,11 +1,21 @@
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class estruturaDeDecisao2 {
 
     static void tela(String x){
         System.out.println("Nota semestral do aluno: " + x);
+    }
+
+    public void unidadeDe(int numero) {
+        numero = (numero % 100) %10;
+    }
+    static void dezenaDe(int numero) {
+        numero = (numero % 100) /10;
+        System.out.print(numero);
+    }
+    static void centenaDe(int numero) {
+        numero = (numero / 100);
+        System.out.print(numero);
     }
 
     public static void main(String[] args){
@@ -451,15 +461,16 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
             }//Tem que melhorar
             case 18: {
                 int num = 0;
+                int unidade;
+                int dezena;
+                int centena;
+                int minhar;
                 System.out.println("Qual numero?");
                 Scanner myObj = new Scanner(System.in);
                 num = myObj.nextInt();
 
-                int centena = num / 100;
-                int dezena = (num % 100) /10;
-                int unidade = (num % 100) %10;
-
-                System.out.println(num + "\n" + centena + "\n" + dezena + "\n" + unidade + "\n");
+                unidade = (num / 10) % 10;
+                System.out.println(unidade);
                 break;
             }
         }
