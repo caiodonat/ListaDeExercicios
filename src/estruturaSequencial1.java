@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class estruturaSequencial1 {
 
+
     public static void main(String[] args) {
         System.out.println("Digite o numero exemplo a ser executado.");
         Scanner myExemplo = new Scanner(System.in);

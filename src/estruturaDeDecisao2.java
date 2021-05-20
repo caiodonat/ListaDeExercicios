@@ -448,6 +448,19 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 }
                 System.out.println("Ano não bissexto: " + ano);
                 break;
+            }//Tem que melhorar
+            case 18: {
+                int num = 0;
+                System.out.println("Qual numero?");
+                Scanner myObj = new Scanner(System.in);
+                num = myObj.nextInt();
+
+                int centena = num / 100;
+                int dezena = (num % 100) /10;
+                int unidade = (num % 100) %10;
+
+                System.out.println(num + "\n" + centena + "\n" + dezena + "\n" + unidade + "\n");
+                break;
             }
         }
     }
