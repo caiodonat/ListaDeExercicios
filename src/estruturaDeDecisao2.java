@@ -460,16 +460,40 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 break;
             }//Tem que melhorar
             case 18: {
-                int num = 0;
-                int unidade;
-                int dezena;
-                int centena;
-                int minhar;
-                System.out.println("Qual numero?");
+                int num;
+                int unidade = 0;
+                int dezena = 0;
+                int centena = 0;
+                int minhar = 0;
+                System.out.println("Digite um numero menor que 1000");
                 Scanner myObj = new Scanner(System.in);
                 num = myObj.nextInt();
 
-                unidade = (num / 10) % 10;
+                if (num >= 1000) {
+                    minhar = num / 1000;
+                    centena = (num / 100) % 10;
+                    dezena = (num % 100) / 10;
+                    unidade = (num % 100) % 10;
+                } else if (num >= 100) {
+                    centena = num / 100;
+                    dezena = (num % 100) / 10;
+                    unidade = (num % 100) % 10;
+                } else if (num >= 10) {
+                    dezena = (num % 100) / 10;
+                    unidade = (num % 100) % 10;
+                } else if (num >= 1) {
+                    unidade = (num % 100) % 10;
+                } else if (num <= 0) {
+                    System.out.println("Algo de errado nao esta certo (1000 < num < 0)");
+                }
+
+                if (num >= 1000){
+                    System.out.println("dois ultimos digitos:" + (num % 100));
+                }
+
+                System.out.println(minhar);
+                System.out.println(centena);
+                System.out.println(dezena);
                 System.out.println(unidade);
                 break;
             }
