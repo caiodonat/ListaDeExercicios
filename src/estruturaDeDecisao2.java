@@ -440,16 +440,67 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 break;
             }
             case 17: {
-                //se o ano não terminar em 00 e for divisível por 4 =|= 1988 : 1988/4 = 497 (numR)
+                //se o ano não terminar em 00 e for divisível por 4 =|= 1988 : 1988/4 = 497 (numR) VV
                 //Um número é divisível por 4 quando a sua dezena é divisível por 4 =|= 1988 : 1988/4 = 497 (numR) | 19'88', 88/4 = 22 (numR)
                 //terminado em 00 dividido por 400 for numR =|= 1900 : 1900/400 = 4.75 XX / 2000/400 = 5 numR
                 //if > 1200 | 12 = multiplo 4 ?(3*4)
 
-                int ano;
+                int anoDigitado;
                 int soma = 4;
+                boolean dezenaPor4B = false;
+
                 System.out.println("Qual ano?");
                 Scanner myObj = new Scanner(System.in);
-                ano = myObj.nextInt();
+                anoDigitado = myObj.nextInt();
+
+                int anoDezena = (anoDigitado % 100) / 10;
+                float anoFloat = anoDigitado;
+                float dezenaFloat = anoDezena;
+
+                if (anoDezena != 0){//não terminar em 00 e for divisível por 4
+                    float dezenapor4 = anoDezena;
+                    while (!(dezenapor4 <= 1)){//dezena é divisível por 4
+                        dezenapor4 = dezenapor4 / 4;
+                        if (dezenapor4 == 1){
+                            dezenaPor4B = true;
+                            break;
+                        }else if (dezenapor4 < 1) {
+                            dezenaPor4B = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (anoDezena == 0){
+                    float anoPor4 =
+
+                    while (!(dezenapor4 <= 1)){//dezena é divisível por 4
+                        dezenapor4 = dezenapor4 / 4;
+                        if (dezenapor4 == 1){
+                            dezenaPor4B = true;
+                            break;
+                        }else if (dezenapor4 < 1) {
+                            dezenaPor4B = false;
+                            break;
+                        }
+                    }
+
+                }
+
+                boolean anoPor4 = false;
+
+                while (!(anoFloat <= 1)){//ano é divisível por 4
+                    anoFloat = anoFloat / 4;
+                    if (anoFloat == 1){
+                        anoPor4 = true;
+                        break;
+                    }else if (anoFloat < 1) {
+                        anoPor4 = false;
+                        break;
+                    }
+                }
+
+
 
                 for (int i=4; i<ano; i+=4){
                     if (ano == i){
@@ -459,7 +510,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 System.out.println("Ano não bissexto: " + ano);
                 break;
             }//Tem que melhorar
-            case 18: {
+            case 19: {
                 int num;
                 int unidade = 0;
                 int dezena = 0;
@@ -472,18 +523,13 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 if (num >= 1000) {
                     minhar = num / 1000;
                     centena = (num / 100) % 10;
-                    dezena = (num % 100) / 10;
-                    unidade = (num % 100) % 10;
-                } else if (num >= 100) {
+                } else {
                     centena = num / 100;
-                    dezena = (num % 100) / 10;
-                    unidade = (num % 100) % 10;
-                } else if (num >= 10) {
-                    dezena = (num % 100) / 10;
-                    unidade = (num % 100) % 10;
-                } else if (num >= 1) {
-                    unidade = (num % 100) % 10;
-                } else if (num <= 0) {
+                }
+                dezena = (num % 100) / 10;
+                unidade = (num % 100) % 10;
+
+                if (num <= 0) {
                     System.out.println("Algo de errado nao esta certo (1000 < num < 0)");
                 }
 
@@ -491,10 +537,35 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                     System.out.println("dois ultimos digitos:" + (num % 100));
                 }
 
-                System.out.println(minhar);
-                System.out.println(centena);
-                System.out.println(dezena);
-                System.out.println(unidade);
+                if (num >= 1000){
+                    System.out.println(minhar + " unidades de milhares");
+                }
+                if (num >= 100){
+                    System.out.println(centena + " centenas");
+                }
+                System.out.println(dezena + " dezenas");
+                System.out.println(unidade + " unidades");
+                break;
+            }
+            case 29: {
+                int num;
+                int por4 = 4;
+                System.out.println("Digite um numero menor que 1000");
+                Scanner myObj = new Scanner(System.in);
+                num = myObj.nextInt();
+
+                int numInt = num / por4;
+                float numFloat = num;
+                float numFloat1 = numFloat / por4;
+
+                float posVirgula = numFloat1 - numInt;
+
+                if (posVirgula == 0){
+                    System.out.println("numero divisivel por: " + por4);
+                }else if (posVirgula != 0){
+                    System.out.println(num + " NAO divisivel por: " + por4);
+                }
+
                 break;
             }
         }

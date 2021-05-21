@@ -114,7 +114,7 @@ public class estruturaDeRepeticao3 {
                     System.out.println("Sexo invalido\n");
                 }
                 while (!estadoCivilTesteB) {
-                    System.out.println("Qual o seu Sexo?");
+                    System.out.println("Estado civil\n (s, c, v ou d)?");
                     Scanner myObj = new Scanner(System.in);
                     char estadoCivilTeste = myObj.next().charAt(0);
 
