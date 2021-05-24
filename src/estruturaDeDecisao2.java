@@ -6,16 +6,43 @@ public class estruturaDeDecisao2 {
         System.out.println("Nota semestral do aluno: " + x);
     }
 
-    public void unidadeDe(int numero) {
-        numero = (numero % 100) %10;
+    static void anoPor4BTeste (int anoDigitado, int tC){
+        float anoPor4Float = anoDigitado;
+        int anoPor4Int = anoDigitado;
+
+        if ((anoPor4Float / 4) == (anoPor4Int / 4)){
+            System.out.println("Ano divisivel por 4");
+            tC++;
+        }else {
+            System.out.println("Ano NAO divisivel por 4");
+        }
     }
-    static void dezenaDe(int numero) {
-        numero = (numero % 100) /10;
-        System.out.print(numero);
+
+    static void dezenaPor400BTeste (int anoDezena, int tC) {
+        float dezenaPor400Float = anoDezena;
+        int dezenaPor400Int = anoDezena;
+
+        if ((dezenaPor400Float / 4) == (dezenaPor400Int / 4)) {
+            tC++;
+            System.out.println("Dezena divisivel por 4");
+        } else {
+            System.out.println("Dezena NAO divisivel por 4");
+        }
     }
-    static void centenaDe(int numero) {
-        numero = (numero / 100);
-        System.out.print(numero);
+
+    static void anoDezenaPor4BTeste (int anoDigitado, int anoDezena, int tC) {
+
+        float anoDAnoPor4Float = anoDigitado;
+        int anoDAnoPor4Int = anoDigitado;
+        if ((anoDAnoPor4Float / 4) == (anoDAnoPor4Int / 4)) {
+            tC++;
+        }
+
+        float anoDDezenaPor4Float = anoDezena;
+        int anoDDezenaPor4Int = anoDezena;
+        if ((anoDDezenaPor4Float / 4) == (anoDDezenaPor4Int / 4)) {
+            tC++;
+        }
     }
 
     public static void main(String[] args){
@@ -370,7 +397,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                         System.err.println("Valor invalido");
                     }
 
-            }//Tem que melhorar
+            }//da pra melhorar
             case 15: {
                 float[] lados = new float[3];
                 int ladosIguais = 0;
@@ -442,72 +469,135 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
             case 17: {
                 //se o ano não terminar em 00 e for divisível por 4 =|= 1988 : 1988/4 = 497 (numR) VV
                 //Um número é divisível por 4 quando a sua dezena é divisível por 4 =|= 1988 : 1988/4 = 497 (numR) | 19'88', 88/4 = 22 (numR)
-                //terminado em 00 dividido por 400 for numR =|= 1900 : 1900/400 = 4.75 XX / 2000/400 = 5 numR
+                //terminado em 00 dividido por 400 for numR =|= 1900 : 1900/400 = 4.75 XX / 2000/400 = 5 numR VV
                 //if > 1200 | 12 = multiplo 4 ?(3*4)
-
-                int anoDigitado;
-                int soma = 4;
-                boolean dezenaPor4B = false;
 
                 System.out.println("Qual ano?");
                 Scanner myObj = new Scanner(System.in);
-                anoDigitado = myObj.nextInt();
+                int anoDigitado = myObj.nextInt();
 
-                int anoDezena = (anoDigitado % 100) / 10;
-                float anoFloat = anoDigitado;
-                float dezenaFloat = anoDezena;
+                int tudoCerto = 0;
 
-                if (anoDezena != 0){//não terminar em 00 e for divisível por 4
-                    float dezenapor4 = anoDezena;
-                    while (!(dezenapor4 <= 1)){//dezena é divisível por 4
-                        dezenapor4 = dezenapor4 / 4;
-                        if (dezenapor4 == 1){
-                            dezenaPor4B = true;
-                            break;
-                        }else if (dezenapor4 < 1) {
-                            dezenaPor4B = false;
-                            break;
-                        }
+                int anoDezena = (anoDigitado % 100);
+                System.out.println("Dezena: " + anoDezena);
+
+                /*
+                boolean anoPor4B = false;
+                if (anoDezena != 0){//ano divisivel por 4
+                    float anoPor4Float = anoDigitado;
+                    int anoPor4Int = anoDigitado;
+
+                    if ((anoPor4Float / 4) == (anoPor4Int / 4)){
+                        anoPor4B = true;
+                        System.out.println("Ano divisivel por 4");
+                        tudoCerto++;
+                    }else {
+                        anoPor4B = false;
+                        System.out.println("Ano NAO divisivel por 4");
                     }
                 }
+                 */
+
+                /*
+                boolean dezenaPor400B = false;
+                if (anoDezena == 0){//dezena divisível por 400
+                    float dezenaPor400Float = anoDezena;
+                    int dezenaPor400Int = anoDezena;
+
+                    if ((dezenaPor400Float / 4) == (dezenaPor400Int / 4)){
+                        dezenaPor400B = true;
+                        tudoCerto++;
+                        System.out.println("Dezena divisivel por 4");
+                    }else {
+                        dezenaPor400B = false;
+                        System.out.println("Dezena NAO divisivel por 4");
+                    }
+                }
+                 */
+
+                /*
+                boolean anoDAnoPor4B = false;
+                boolean anoDDezenaPor4B = false;
+                float anoDAnoPor4Float = anoDigitado;
+                int anoDAnoPor4Int = anoDigitado;
+
+                if ((anoDAnoPor4Float / 4) == (anoDAnoPor4Int / 4)){
+                    anoDAnoPor4B = true;
+                    tudoCerto++;
+                }else {
+                    anoDAnoPor4B = false;
+                }
+
+                float anoDDezenaPor4Float = anoDezena;
+                int anoDDezenaPor4Int = anoDezena;
+
+                if ((anoDDezenaPor4Float / 4) == (anoDDezenaPor4Int / 4)){
+                    anoDDezenaPor4B = true;
+                    tudoCerto++;
+                }else {
+                    anoDDezenaPor4B = false;
+                }
+                 */
 
                 if (anoDezena == 0){
-                    float anoPor4 =
+                    System.out.println("Dezena = '00'");
+                    float anoPor400Float = anoDigitado;
+                    int anoPor400Int = anoDigitado;
 
-                    while (!(dezenapor4 <= 1)){//dezena é divisível por 4
-                        dezenapor4 = dezenapor4 / 4;
-                        if (dezenapor4 == 1){
-                            dezenaPor4B = true;
-                            break;
-                        }else if (dezenapor4 < 1) {
-                            dezenaPor4B = false;
-                            break;
-                        }
+                    if ((anoPor400Float / 400) == (anoPor400Int / 400)){
+                        tudoCerto++;
+                        System.out.println("Dezena divisivel por 400");
+                    }else {
+                        System.out.println("Dezena NAO divisivel por 400");
                     }
+                    System.out.println("F: " + (anoPor400Float / 400) + " | I: " + (anoPor400Int / 400));
 
+                }else if(anoDezena != 0){
+                    System.out.println("Dezena != '00'");
+                    float anoPor4Float = anoDigitado;
+                    int anoPor4Int = anoDigitado;
+
+                    if ((anoPor4Float / 4) == (anoPor4Int / 4)){
+                        System.out.println("Ano divisivel por 4");
+                        tudoCerto++;
+                    }else {
+                        System.out.println("Ano NAO divisivel por 4");
+                    }
+                    System.out.println("F: " + (anoPor4Float / 4) + " | I: " + (anoPor4Int / 4));
                 }
 
-                boolean anoPor4 = false;
+                //ano + dezena divisivel por 4
+                float anoDAnoPor4Float = anoDigitado;
+                int anoDAnoPor4Int = anoDigitado;
 
-                while (!(anoFloat <= 1)){//ano é divisível por 4
-                    anoFloat = anoFloat / 4;
-                    if (anoFloat == 1){
-                        anoPor4 = true;
-                        break;
-                    }else if (anoFloat < 1) {
-                        anoPor4 = false;
-                        break;
-                    }
+                if ((anoDAnoPor4Float / 4) == (anoDAnoPor4Int / 4)){
+                    tudoCerto++;
+                    System.out.println("Ano divisivel por 4");
+                }else {
+                    System.out.println("Ano NAO divisivel por 4");
+                }
+                System.out.println("F: " + (anoDAnoPor4Float / 4) + " | I: " + (anoDAnoPor4Int / 4));
+
+                float anoDDezenaPor4Float = anoDezena;
+                int anoDDezenaPor4Int = anoDezena;
+
+                if ((anoDDezenaPor4Float / 4) == (anoDDezenaPor4Int / 4)){
+                    System.out.println("Dezena divisivel por 4");
+                    tudoCerto++;
+                }else {
+                    System.out.println("Dezena NAO divisivel por 4");
+                }
+                System.out.print("F: " + (anoDDezenaPor4Float / 4) + " | I: " + (anoDDezenaPor4Int / 4));
+
+
+                //Verificação final dos teste
+                System.out.println("\n" + tudoCerto);
+                if (tudoCerto == 3){
+                    System.out.println(anoDigitado + " è um ano bissexto");
+                }else {
+                    System.out.println(anoDigitado + " NAO è um ano bissexto");
                 }
 
-
-
-                for (int i=4; i<ano; i+=4){
-                    if (ano == i){
-                        System.out.println("Ano bissexto: " + ano);
-                    }
-                }
-                System.out.println("Ano não bissexto: " + ano);
                 break;
             }//Tem que melhorar
             case 19: {
@@ -565,12 +655,8 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 }else if (posVirgula != 0){
                     System.out.println(num + " NAO divisivel por: " + por4);
                 }
-
                 break;
             }
         }
     }
-
-
-
 }
