@@ -6,52 +6,11 @@ public class estruturaDeDecisao2 {
         System.out.println("Nota semestral do aluno: " + x);
     }
 
-    static void anoPor4BTeste (int anoDigitado, int tC){
-        float anoPor4Float = anoDigitado;
-        int anoPor4Int = anoDigitado;
-
-        if ((anoPor4Float / 4) == (anoPor4Int / 4)){
-            System.out.println("Ano divisivel por 4");
-            tC++;
-        }else {
-            System.out.println("Ano NAO divisivel por 4");
-        }
-    }
-
-    static void dezenaPor400BTeste (int anoDezena, int tC) {
-        float dezenaPor400Float = anoDezena;
-        int dezenaPor400Int = anoDezena;
-
-        if ((dezenaPor400Float / 4) == (dezenaPor400Int / 4)) {
-            tC++;
-            System.out.println("Dezena divisivel por 4");
-        } else {
-            System.out.println("Dezena NAO divisivel por 4");
-        }
-    }
-
-    static void anoDezenaPor4BTeste (int anoDigitado, int anoDezena, int tC) {
-
-        float anoDAnoPor4Float = anoDigitado;
-        int anoDAnoPor4Int = anoDigitado;
-        if ((anoDAnoPor4Float / 4) == (anoDAnoPor4Int / 4)) {
-            tC++;
-        }
-
-        float anoDDezenaPor4Float = anoDezena;
-        int anoDDezenaPor4Int = anoDezena;
-        if ((anoDDezenaPor4Float / 4) == (anoDDezenaPor4Int / 4)) {
-            tC++;
-        }
-    }
-
     public static void main(String[] args){
         System.out.println("Digite o numero exemplo a ser executado");
         Scanner myExemplo = new Scanner(System.in);
         int exemploRequerido = myExemplo.nextInt();
-/*
-Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
- */
+
         switch (exemploRequerido) {
             case 1: {
                 float[] numeros = new float[2];
@@ -348,6 +307,63 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 break;
             }
             case 14: {
+                float[] notas = new float[2];
+                for (int i = 0; i < notas.length; i++) {
+                    System.out.println("Digite a nota do aluno no " + (i + 1) + " trimestre");
+                    Scanner myObj = new Scanner(System.in);
+                    notas[i] = myObj.nextFloat();
+                }
+                float notaMedia = (notas[0] + notas[1]) / 2;
+                //System.out.println("notaMedia: "+ notaMedia);
+
+
+                int notaEUALetra = (int) notaMedia;
+                //System.out.println("notaEUALetra: " +notaEUALetra);
+
+                switch (notaEUALetra) {
+                    case 10: {
+                        System.out.print("S");
+                        break;
+                    }
+                    case 9: {
+                        System.out.print("A");
+                        break;
+                    }
+                    case 8: {
+                        System.out.print("B");
+                        break;
+                    }
+                    case 7: {
+                        System.out.print("C");
+                        break;
+                    }
+                    case 6: {
+                        System.out.print("D");
+                        break;
+                    }
+                    case 5: {
+                        System.out.print("E");
+                        break;
+                    }
+                    case 4: {
+                        System.out.print("F");
+                        break;
+                    }
+
+                }
+
+                int notaEUASimbolo = (int) ((notaMedia* 100) % 100);
+                //System.out.println("notaEUASimbolo: " + notaEUASimbolo);
+
+                if (notaEUASimbolo>=70){
+                    System.out.println("+");
+                }else if(notaEUASimbolo>=45){
+                    System.out.println("");
+                }else if(notaEUASimbolo>=0){
+                    System.out.println("-");
+                }
+
+                /*
                 System.out.println("Digite a nota do aluno no 1 trimestre");
                 Scanner myObj = new Scanner(System.in);
                 float nota1B = myObj.nextFloat();
@@ -358,46 +374,52 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 float notaF = (nota1B + nota2B) / 2;
                 notaEUA = notaF * 10;
 
+                //verificação em duas etapas, primeiro verifica o primeiro caracter 10~5 = S,A,B,C,D,E ou F (7), depois verifica o resto dos numeros 7:'+',4.5:' ' ou 0:'-' (3)
+                if (notaEUA == 100) {
+                    tela("S");
+                } else if (notaEUA >= 97) {
+                    tela("A+");
+                } else if (notaEUA >= 94.5) {
+                    tela("A");
+                } else if (notaEUA >= 90) {
+                    tela("A-");
 
-                    if (notaEUA == 100) {
-                        tela("S");
-                    } else if (notaEUA >= 97) {
-                        tela("A+");
-                    } else if (notaEUA >= 94.5) {
-                        tela("A");
-                    } else if (notaEUA >= 90) {
-                        tela("A-");
-                    } else if (notaEUA >= 87) {
-                        tela("B+");
-                    } else if (notaEUA >= 84.5) {
-                        tela("B");
-                    } else if (notaEUA >= 80) {
-                        tela("B-");
-                    } else if (notaEUA >= 77) {
-                        tela("C+");
-                    } else if (notaEUA >= 74.5) {
-                        tela("C");
-                    } else if (notaEUA >= 70) {
-                        tela("C-");
-                    } else if (notaEUA >= 67) {
-                        tela("D+");
-                    } else if (notaEUA >= 64.5) {
-                        tela("D");
-                    } else if (notaEUA >= 60) {
-                        tela("D-");
-                    } else if (notaEUA >= 57) {
-                        tela("E+");
-                    } else if (notaEUA >= 54.5) {
-                        tela("E");
-                    } else if (notaEUA >= 50) {
-                        tela("E-");
-                    } else if (notaEUA < 50) {
-                        System.out.println("Nota F");
-                    } else {
-                        System.err.println("Valor invalido");
-                    }
+                } else if (notaEUA >= 87) {
+                    tela("B+");
+                } else if (notaEUA >= 84.5) {
+                    tela("B");
+                } else if (notaEUA >= 80) {
+                    tela("B-");
 
-            }//da pra melhorar
+                } else if (notaEUA >= 77) {
+                    tela("C+");
+                } else if (notaEUA >= 74.5) {
+                    tela("C");
+                } else if (notaEUA >= 70) {
+                    tela("C-");
+
+                } else if (notaEUA >= 67) {
+                    tela("D+");
+                } else if (notaEUA >= 64.5) {
+                    tela("D");
+                } else if (notaEUA >= 60) {
+                    tela("D-");
+
+                } else if (notaEUA >= 57) {
+                    tela("E+");
+                } else if (notaEUA >= 54.5) {
+                    tela("E");
+                } else if (notaEUA >= 50) {
+                    tela("E-");
+
+                } else if (notaEUA < 50) {
+                    System.out.println("Nota F");
+                } else {
+                    System.err.println("Valor invalido");
+                }
+                 */
+                break;
+            }
             case 15: {
                 float[] lados = new float[3];
                 int ladosIguais = 0;
@@ -467,10 +489,6 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 break;
             }
             case 17: {
-                //se o ano não terminar em 00 e for divisível por 4 =|= 1988 : 1988/4 = 497 (numR) VV
-                //Um número é divisível por 4 quando a sua dezena é divisível por 4 =|= 1988 : 1988/4 = 497 (numR) | 19'88', 88/4 = 22 (numR)
-                //terminado em 00 dividido por 400 for numR =|= 1900 : 1900/400 = 4.75 XX / 2000/400 = 5 numR VV
-                //if > 1200 | 12 = multiplo 4 ?(3*4)
 
                 System.out.println("Qual ano?");
                 Scanner myObj = new Scanner(System.in);
@@ -479,65 +497,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 int tudoCerto = 0;
 
                 int anoDezena = (anoDigitado % 100);
-                System.out.println("Dezena: " + anoDezena);
-
-                /*
-                boolean anoPor4B = false;
-                if (anoDezena != 0){//ano divisivel por 4
-                    float anoPor4Float = anoDigitado;
-                    int anoPor4Int = anoDigitado;
-
-                    if ((anoPor4Float / 4) == (anoPor4Int / 4)){
-                        anoPor4B = true;
-                        System.out.println("Ano divisivel por 4");
-                        tudoCerto++;
-                    }else {
-                        anoPor4B = false;
-                        System.out.println("Ano NAO divisivel por 4");
-                    }
-                }
-                 */
-
-                /*
-                boolean dezenaPor400B = false;
-                if (anoDezena == 0){//dezena divisível por 400
-                    float dezenaPor400Float = anoDezena;
-                    int dezenaPor400Int = anoDezena;
-
-                    if ((dezenaPor400Float / 4) == (dezenaPor400Int / 4)){
-                        dezenaPor400B = true;
-                        tudoCerto++;
-                        System.out.println("Dezena divisivel por 4");
-                    }else {
-                        dezenaPor400B = false;
-                        System.out.println("Dezena NAO divisivel por 4");
-                    }
-                }
-                 */
-
-                /*
-                boolean anoDAnoPor4B = false;
-                boolean anoDDezenaPor4B = false;
-                float anoDAnoPor4Float = anoDigitado;
-                int anoDAnoPor4Int = anoDigitado;
-
-                if ((anoDAnoPor4Float / 4) == (anoDAnoPor4Int / 4)){
-                    anoDAnoPor4B = true;
-                    tudoCerto++;
-                }else {
-                    anoDAnoPor4B = false;
-                }
-
-                float anoDDezenaPor4Float = anoDezena;
-                int anoDDezenaPor4Int = anoDezena;
-
-                if ((anoDDezenaPor4Float / 4) == (anoDDezenaPor4Int / 4)){
-                    anoDDezenaPor4B = true;
-                    tudoCerto++;
-                }else {
-                    anoDDezenaPor4B = false;
-                }
-                 */
+                //System.out.println("Dezena: " + anoDezena);
 
                 if (anoDezena == 0){
                     System.out.println("Dezena = '00'");
@@ -550,7 +510,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                     }else {
                         System.out.println("Dezena NAO divisivel por 400");
                     }
-                    System.out.println("F: " + (anoPor400Float / 400) + " | I: " + (anoPor400Int / 400));
+                    //System.out.println("F: " + (anoPor400Float / 400) + " | I: " + (anoPor400Int / 400));
 
                 }else if(anoDezena != 0){
                     System.out.println("Dezena != '00'");
@@ -563,7 +523,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                     }else {
                         System.out.println("Ano NAO divisivel por 4");
                     }
-                    System.out.println("F: " + (anoPor4Float / 4) + " | I: " + (anoPor4Int / 4));
+                    //System.out.println("F: " + (anoPor4Float / 4) + " | I: " + (anoPor4Int / 4));
                 }
 
                 //ano + dezena divisivel por 4
@@ -576,7 +536,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 }else {
                     System.out.println("Ano NAO divisivel por 4");
                 }
-                System.out.println("F: " + (anoDAnoPor4Float / 4) + " | I: " + (anoDAnoPor4Int / 4));
+                //System.out.println("F: " + (anoDAnoPor4Float / 4) + " | I: " + (anoDAnoPor4Int / 4));
 
                 float anoDDezenaPor4Float = anoDezena;
                 int anoDDezenaPor4Int = anoDezena;
@@ -587,7 +547,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 }else {
                     System.out.println("Dezena NAO divisivel por 4");
                 }
-                System.out.print("F: " + (anoDDezenaPor4Float / 4) + " | I: " + (anoDDezenaPor4Int / 4));
+                //System.out.print("F: " + (anoDDezenaPor4Float / 4) + " | I: " + (anoDDezenaPor4Int / 4));
 
 
                 //Verificação final dos teste
@@ -599,7 +559,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 }
 
                 break;
-            }//Tem que melhorar
+            }
             case 19: {
                 int num;
                 int unidade = 0;
@@ -624,10 +584,6 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 }
 
                 if (num >= 1000){
-                    System.out.println("dois ultimos digitos:" + (num % 100));
-                }
-
-                if (num >= 1000){
                     System.out.println(minhar + " unidades de milhares");
                 }
                 if (num >= 100){
@@ -637,26 +593,7 @@ Faça um Programa que peça um número correspondente a um determinado ano e em 
                 System.out.println(unidade + " unidades");
                 break;
             }
-            case 29: {
-                int num;
-                int por4 = 4;
-                System.out.println("Digite um numero menor que 1000");
-                Scanner myObj = new Scanner(System.in);
-                num = myObj.nextInt();
 
-                int numInt = num / por4;
-                float numFloat = num;
-                float numFloat1 = numFloat / por4;
-
-                float posVirgula = numFloat1 - numInt;
-
-                if (posVirgula == 0){
-                    System.out.println("numero divisivel por: " + por4);
-                }else if (posVirgula != 0){
-                    System.out.println(num + " NAO divisivel por: " + por4);
-                }
-                break;
-            }
         }
     }
 }
