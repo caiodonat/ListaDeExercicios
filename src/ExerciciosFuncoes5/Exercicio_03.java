@@ -5,16 +5,21 @@ import java.util.Scanner;
 public class Exercicio_03 {
 
     public static void main(String[] args) {
-        float[] numDigitados = new float[3];
-        for (int i = 0; i< numDigitados.length; i++){
-            System.out.println((i+1) + " numero");
-            Scanner myObj = new Scanner(System.in);i
-            numDigitados[i] = myObj.nextFloat();
-        }
-        somaNumeros(numDigi1, numDigitados[1], numDigitados[2]);
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("primeiro numero");
+        float numDigit1 = myObj.nextFloat();
+
+        System.out.println("Segundo numero");
+        float numDigit2 = myObj.nextFloat();
+
+        System.out.println("Terceiro numero");
+        float numDigit3 = myObj.nextFloat();
+
+        System.out.println(somaNumeros(numDigit1, numDigit2, numDigit3));
     }
 
-    private static void somaNumeros(float numDigitado, float numDigitado1, float numDigitado2) {
+    static float somaNumeros(float num1, float num2, float num3) {
 
+        return (num1 + num2 + num3);
     }
 }
