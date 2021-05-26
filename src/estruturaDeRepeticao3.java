@@ -8,24 +8,18 @@ public class estruturaDeRepeticao3 {
 
         switch (myExemplos){
             case 1: {
-                boolean numDigBoolean = false;
-
-                while (!numDigBoolean) {
-                    System.out.println("Digite uma nota entre 0 ate 10;");
+                boolean numeroDigitadoBoolean = false;
+                while (!numeroDigitadoBoolean){
+                    System.out.println("Digite uma nota entre 0 ate 10");
                     Scanner myObj = new Scanner(System.in);
                     int numDig = myObj.nextInt();
 
-                    for (int i=0; i<=10; i++){
-                        if (numDig == i){
-                            System.out.println("Valor valido, parabens.");
-                            numDigBoolean = true;
-                            break;
-                        }
+                    if (numDig <= 10 && numDig >=0){
+                        System.out.println("nota é valido");
+                        numeroDigitadoBoolean = true;
+                    }else {
+                        System.out.println("nota nao é valido");
                     }
-                    if (numDigBoolean) {
-                        break;
-                    }
-                    System.out.println("Numero Invalido, por favor tente novamente.");
                 }
                 break;
             }
