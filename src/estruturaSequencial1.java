@@ -202,7 +202,6 @@ public class estruturaSequencial1 {
 
                 int lataLitros = 18;
                 float valorLata = 80.00f;
-
                 float galaoLitros = 3.60f;
                 float valorGalao = 25.00f;
                 int latasC = 0;
