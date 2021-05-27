@@ -5,21 +5,27 @@ import java.util.Scanner;
 public class Exercicio_03 {
 
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
+        Scanner myScanner = new Scanner(System.in);
+
         System.out.println("primeiro numero");
-        float numDigit1 = myObj.nextFloat();
+        float primeiroNumeroDigitado = myScanner.nextFloat();
 
         System.out.println("Segundo numero");
-        float numDigit2 = myObj.nextFloat();
+        float segundoNumeroDigitado = myScanner.nextFloat();
 
         System.out.println("Terceiro numero");
-        float numDigit3 = myObj.nextFloat();
+        float terceiroNumeroDigitado = myScanner.nextFloat();
 
-        System.out.println(somaNumeros(numDigit1, numDigit2, numDigit3));
+        System.out.println(somaNumeros(primeiroNumeroDigitado, segundoNumeroDigitado, terceiroNumeroDigitado));//mostro na tela o 'return' do metodo
+        // 'somaNumeros', que sera a soma dos 3 parametros
+
     }
 
-    static float somaNumeros(float num1, float num2, float num3) {
-
-        return (num1 + num2 + num3);
+    static float somaNumeros(float primeiroNumero, float segundoNumero, float terceiroNumero) {
+        return (primeiroNumero + segundoNumero + terceiroNumero);
+        /*uma outra solução seria criar outra variavel para armazenar o resultado, e exibir essa variavel (resuldadoDaSoma)
+        float resultadoDaSoma = primeiroNumero + segundoNumero + terceiroNumero;
+        return resultadoDaSoma;
+         */
     }
 }
