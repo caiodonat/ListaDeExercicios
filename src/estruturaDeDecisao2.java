@@ -2,10 +2,6 @@ import java.util.Scanner;
 
 public class estruturaDeDecisao2 {
 
-    static void tela(String x){
-        System.out.println("Nota semestral do aluno: " + x);
-    }
-
     public static void main(String[] args){
         System.out.println("Digite o numero exemplo a ser executado");
         Scanner myExemplo = new Scanner(System.in);
@@ -362,62 +358,6 @@ public class estruturaDeDecisao2 {
                 }else if(notaEUASimbolo>=0){
                     System.out.println("-");
                 }
-
-                /*
-                System.out.println("Digite a nota do aluno no 1 trimestre");
-                Scanner myObj = new Scanner(System.in);
-                float nota1B = myObj.nextFloat();
-                System.out.println("Digite a nota do aluno no 2 trimestre");
-                float nota2B = myObj.nextFloat();
-                float notaEUA = 0;
-
-                float notaF = (nota1B + nota2B) / 2;
-                notaEUA = notaF * 10;
-
-                //verificação em duas etapas, primeiro verifica o primeiro caracter 10~5 = S,A,B,C,D,E ou F (7), depois verifica o resto dos numeros 7:'+',4.5:' ' ou 0:'-' (3)
-                if (notaEUA == 100) {
-                    tela("S");
-                } else if (notaEUA >= 97) {
-                    tela("A+");
-                } else if (notaEUA >= 94.5) {
-                    tela("A");
-                } else if (notaEUA >= 90) {
-                    tela("A-");
-
-                } else if (notaEUA >= 87) {
-                    tela("B+");
-                } else if (notaEUA >= 84.5) {
-                    tela("B");
-                } else if (notaEUA >= 80) {
-                    tela("B-");
-
-                } else if (notaEUA >= 77) {
-                    tela("C+");
-                } else if (notaEUA >= 74.5) {
-                    tela("C");
-                } else if (notaEUA >= 70) {
-                    tela("C-");
-
-                } else if (notaEUA >= 67) {
-                    tela("D+");
-                } else if (notaEUA >= 64.5) {
-                    tela("D");
-                } else if (notaEUA >= 60) {
-                    tela("D-");
-
-                } else if (notaEUA >= 57) {
-                    tela("E+");
-                } else if (notaEUA >= 54.5) {
-                    tela("E");
-                } else if (notaEUA >= 50) {
-                    tela("E-");
-
-                } else if (notaEUA < 50) {
-                    System.out.println("Nota F");
-                } else {
-                    System.err.println("Valor invalido");
-                }
-                 */
                 break;
             }
             case 15: {
@@ -489,15 +429,11 @@ public class estruturaDeDecisao2 {
                 break;
             }
             case 17: {
-
                 System.out.println("Qual ano?");
                 Scanner myObj = new Scanner(System.in);
                 int anoDigitado = myObj.nextInt();
-
                 int tudoCerto = 0;
-
                 int anoDezena = (anoDigitado % 100);
-                //System.out.println("Dezena: " + anoDezena);
 
                 if (anoDezena == 0){
                     System.out.println("Dezena = '00'");
@@ -510,7 +446,6 @@ public class estruturaDeDecisao2 {
                     }else {
                         System.out.println("Dezena NAO divisivel por 400");
                     }
-                    //System.out.println("F: " + (anoPor400Float / 400) + " | I: " + (anoPor400Int / 400));
 
                 }else if(anoDezena != 0){
                     System.out.println("Dezena != '00'");
@@ -523,10 +458,8 @@ public class estruturaDeDecisao2 {
                     }else {
                         System.out.println("Ano NAO divisivel por 4");
                     }
-                    //System.out.println("F: " + (anoPor4Float / 4) + " | I: " + (anoPor4Int / 4));
                 }
 
-                //ano + dezena divisivel por 4
                 float anoDAnoPor4Float = anoDigitado;
                 int anoDAnoPor4Int = anoDigitado;
 
@@ -536,7 +469,6 @@ public class estruturaDeDecisao2 {
                 }else {
                     System.out.println("Ano NAO divisivel por 4");
                 }
-                //System.out.println("F: " + (anoDAnoPor4Float / 4) + " | I: " + (anoDAnoPor4Int / 4));
 
                 float anoDDezenaPor4Float = anoDezena;
                 int anoDDezenaPor4Int = anoDezena;
@@ -547,7 +479,6 @@ public class estruturaDeDecisao2 {
                 }else {
                     System.out.println("Dezena NAO divisivel por 4");
                 }
-                //System.out.print("F: " + (anoDDezenaPor4Float / 4) + " | I: " + (anoDDezenaPor4Int / 4));
 
 
                 //Verificação final dos teste
@@ -593,7 +524,10 @@ public class estruturaDeDecisao2 {
                 System.out.println(unidade + " unidades");
                 break;
             }
-
         }
+    }
+
+    static void tela(String x){
+        System.out.println("Nota semestral do aluno: " + x);
     }
 }
