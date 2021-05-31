@@ -15,7 +15,7 @@ a logica; o numero que sera exibido é o numero da linha,
  */
 public class Exercicio_01 {
 
-    static void repeticao(int numRepeticoes){
+    public void repeticao(int numRepeticoes){
         for (int i=0; i<numRepeticoes; i++){//Variavel 'i' equivale ao numero de linhas (i = L)
             for (int j=0; j<(i+1); j++){//Variavel 'j' equivale ao numero de colunas (j = C)
                 System.out.print((i+1) + " ");//ja que i=0, é necessario somar +1 para que o numero exibido
@@ -26,7 +26,7 @@ public class Exercicio_01 {
         }
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Digite o numero de repetições");
         int numRepeti = myObj.nextInt();
