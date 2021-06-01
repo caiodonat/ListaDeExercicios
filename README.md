@@ -1,5 +1,4 @@
 # ListaDeExercicios
-https://wiki.python.org.br/ListaDeExercicios
 
   Esse repositorio tem como função mostrar o avanço na linguangem JAVA, e para preaticar esses conhecimentos foi usada essa lista de exercicio (https://wiki.python.org.br/ListaDeExercicios).
   
