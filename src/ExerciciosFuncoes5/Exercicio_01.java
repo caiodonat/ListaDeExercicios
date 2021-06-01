@@ -11,7 +11,7 @@ L = Linha | C = Coluna
 2L|02.02.
 3L|03.03.03.
 
-a logica; o numero que sera exibido é o numero da linha,
+a logica é essa: o numero que sera exibido é o numero da linha,
  */
 public class Exercicio_01 {
 
