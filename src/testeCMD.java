@@ -1,7 +1,9 @@
 public class testeCMD {
     public static void main(String[] args) {
-        for (int i=0; i<10; i++){
-            System.out.println("Hello World");
+        int num =1;
+        while (true){
+            num = num + 1;
+            System.out.println(num);
         }
     }
 }
