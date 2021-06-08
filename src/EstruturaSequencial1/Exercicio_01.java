@@ -1,5 +1,7 @@
 package EstruturaSequencial1;
 
+import java.lang.System;
+
 public class Exercicio_01 {
 
 
@@ -9,6 +11,7 @@ public class Exercicio_01 {
         int num2 = 2;
         float numPi = (float) 3.12345678910;
         double douPi = 3.12345678910;
+        char pularLinha = '\n';
         String hW = "Hello, World";
         String hello = "Hello,";
         String world = " World";
@@ -50,6 +53,7 @@ public class Exercicio_01 {
         System.out.println("Hello, World");
         System.out.println(num);
         System.out.println("Hello, World\n" + num);
+        System.out.printf("Hello, World%c%d%n", pularLinha, num);
         System.out.printf("%s%n%d%n", "Hello, World", num);
 
         System.out.println();

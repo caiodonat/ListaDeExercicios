@@ -11,9 +11,7 @@ public class estruturaSequencial1 {
         System.out.println("Digite o numero exemplo a ser executado.");
         Scanner myExemplo = new Scanner(System.in);
         int exemploRequerido = myExemplo.nextInt();
-/*
-18.Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
-*/
+
         switch (exemploRequerido) {
             case 1: {
                 System.out.println("Alo Mundo");
