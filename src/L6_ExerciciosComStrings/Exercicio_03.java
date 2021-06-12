@@ -1,19 +1,18 @@
-package L5_ExerciciosFuncoes;
+package L6_ExerciciosComStrings;
 
-import java.util.Locale;
 import java.util.Scanner;
 
-public class Exercicio_12 {
+public class Exercicio_03 {
     public static void main(String[] args) {
 
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Digite uma palavra");
         String palavra = myScanner.nextLine();
 
-        String[] palavraSplit = palavra.split("");
+        String[] palavraSplit = palavra.toUpperCase().split("");
 
         for (String letras : palavraSplit){
-            System.out.print(letras);
+            System.out.println(letras);
         }
 
         /*
