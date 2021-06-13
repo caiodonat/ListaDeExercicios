@@ -8,13 +8,14 @@ public class Exercicio_08_main {
         System.out.println("Digite uma frase");
         String frase = myScanner.nextLine();
 
-        frase = frase.replaceAll(" ","");//Removo os espaços em branco (caso haja algum)
+        frase = frase.replaceAll("[ .]","");//Removo os espaços em branco (caso haja algum)
 
         StringBuilder fraseReversaB = new StringBuilder();//é necessario invocar 'StringBuilder' para costruir a frase invertida
         fraseReversaB.append(frase).reverse();//adiciono a String original
         fraseReversaB.reverse();//inverto a orden dentro a string
         String fraseReversa = String.valueOf(fraseReversaB);//associo o valor de 'StringBuilder' para uma String, para poder fazer comparaçoes
 
+        System.out.println(frase);
         System.out.println(fraseReversaB);
 
         if (frase.length() == fraseReversa.length()) {//verifico sem oque foi digitado é uma frase (contem espaço) ou palavra (nao contem espaço)

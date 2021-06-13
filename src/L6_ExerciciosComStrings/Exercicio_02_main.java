@@ -1,4 +1,4 @@
-package L6_ExerciciosComStrings.Exercicio_02;
+package L6_ExerciciosComStrings;
 
 import com.sun.jdi.Value;
 

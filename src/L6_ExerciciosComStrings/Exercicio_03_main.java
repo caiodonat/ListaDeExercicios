@@ -2,7 +2,7 @@ package L6_ExerciciosComStrings;
 
 import java.util.Scanner;
 
-public class Exercicio_03 {
+public class Exercicio_03_main {
     public static void main(String[] args) {
 
         Scanner myScanner = new Scanner(System.in);
