@@ -8,9 +8,11 @@ public class Exercicio_04 {
     public void setNumero(float numero) {
         this.numeroDigitadoP = numero;
     }
+
     public float getNumero(){
         return this.numeroDigitadoP;
     }
+
     public void setMensagemFinal() {
         float numeroDigitado = this.numeroDigitadoP;
         String mensagemFinal;
