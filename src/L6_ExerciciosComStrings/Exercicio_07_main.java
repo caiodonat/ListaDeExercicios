@@ -24,7 +24,8 @@ public class Exercicio_07_main {
                 }
             }
         }
-        System.out.printf("Espaços em branco existente na frase: %d%n", emBranco);
+        System.out.printf("Espaços em branco existente na frase: %d vezes%n", emBranco);
+        System.out.print("Espaços em branco existente na frase: " + emBranco + "vezes\n");
         System.out.printf("vogais existente na frase: %d", vogais);
     }
 }

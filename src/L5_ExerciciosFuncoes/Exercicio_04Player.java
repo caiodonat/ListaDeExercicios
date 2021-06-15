@@ -1,4 +1,4 @@
-package L5_ExerciciosFuncoes.Exercicio_04Package;
+package L5_ExerciciosFuncoes;
 
 /*
 1.solicito um numero real (numero negativo;-1,-123 && fação numerica; 1/3, -1/3)
@@ -6,14 +6,15 @@ package L5_ExerciciosFuncoes.Exercicio_04Package;
 3.faço (dentro do metodo) a comparacao ("numero real" > 0 = positivo | "numero real" < 0 = negativo | "numero real" == 0 = 0)
  */
 
+import L5_ExerciciosFuncoes.Ex_04_L5_Core;
+
 import java.util.Scanner;
 
 public class Exercicio_04Player {
 
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
-        Exercicio_04 exer04 = new Exercicio_04();
-
+        Ex_04_L5_Core exer04 = new Ex_04_L5_Core();
 
         System.out.print("Digite um \"numero real\"; ");
         float numeroDigitado = myScanner.nextFloat();

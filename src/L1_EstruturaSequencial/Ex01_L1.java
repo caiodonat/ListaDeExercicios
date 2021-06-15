@@ -2,10 +2,7 @@ package L1_EstruturaSequencial;
 
 import java.lang.System;
 
-public class Exercicio_01 {
-
-
-
+public class Ex01_L1 {
     public static void main(String[] args) {
         int num = 1;
         int num2 = 2;

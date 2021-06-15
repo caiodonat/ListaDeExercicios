@@ -13,17 +13,6 @@ public class estruturaSequencial1 {
         int exemploRequerido = myExemplo.nextInt();
 
         switch (exemploRequerido) {
-            case 1: {
-                System.out.println("Alo Mundo");
-                break;
-            }
-            case 2: {
-                System.out.println("Digite um numero para ser exibido");
-                Scanner myObj = new Scanner(System.in);
-                int userName = myObj.nextInt();
-                System.out.println("O número informado foi: " + userName);
-                break;
-            }
             case 3: {
                 int[] numeros = new int[3];
                 System.out.println("Digite 2 numeros para que sejam somados");
@@ -199,7 +188,6 @@ public class estruturaSequencial1 {
             }
             case 17: {
                 int metrosLitros = 6;
-
                 int lataLitros = 18;
                 float valorLata = 80.00f;
                 float galaoLitros = 3.60f;

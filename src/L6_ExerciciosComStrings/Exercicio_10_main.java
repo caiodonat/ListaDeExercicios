@@ -1,10 +1,11 @@
 package L6_ExerciciosComStrings;
 
-import java.util.Scanner;
+import java.util.Scanner;//o 'importe' se faz desnecessário
 
 public class Exercicio_10_main {
     public static void main(String[] args) {
-        Scanner myScanner = new Scanner(System.in);
+        java.util.Scanner myScanner = new java.util.Scanner(System.in);//è possivel utilizar o "diretorio" completo (java.util.Scanner), para nao ser necessario o "importe"
+        //Scanner myScanner = new Scanner(System.in);//A linha de cima tem a mesma função que essa linha
         System.out.println("Digite um numeto ate 99");
         int numeroDigitado = myScanner.nextInt();
         if (numeroDigitado <= 10){
@@ -88,13 +89,13 @@ public class Exercicio_10_main {
         String string;
         switch (numero){
             case 1 -> {
-                string = "um";
+                string = "Um";
             }
             case 2 -> {
-                string = "dois";
+                string = "Dois";
             }
             case 3 -> {
-                string = "tres";
+                string = "Tres";
             }
             case 4 -> {
                 string = "Quatro";

@@ -1,6 +1,6 @@
-package L5_ExerciciosFuncoes.Exercicio_04Package;
+package L5_ExerciciosFuncoes;
 
-public class Exercicio_04 {
+public class Ex_04_L5_Core {
 
     private float numeroDigitadoP;
     private String mensagemFinalP;
@@ -25,6 +25,7 @@ public class Exercicio_04 {
         }
         this.mensagemFinalP = mensagemFinal;
     }
+
     public String getMensagemFinal(){
         setMensagemFinal();
         return mensagemFinalP;
