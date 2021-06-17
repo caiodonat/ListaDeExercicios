@@ -1,6 +1,8 @@
+package L4_ExerciciosListas;
+
 import java.util.Scanner;
 
-public class L4_listaDeExercicios {
+public class L4_ExerciciosListas {
     public static void main(String[] args) {
         System.out.println("Seja muito bem vindo ha nossa 4 lista de exercicios,\nQual exemplo vc deseja reproduzir?");
         Scanner numeroDigitado = new Scanner(System.in);
@@ -48,28 +50,7 @@ public class L4_listaDeExercicios {
                 break;
             }
             case 4: {
-                System.out.println("Escreva uma sequancia de de Letras");
-                char[] letrasScanner = new char[10];
-                char[] letrasVogais = {'a', 'e', 'i', 'o', 'u'};
-                int vogaisSoma = 0;
-                for(int i=0; i<letrasScanner.length; i++){
-                    Scanner myObj = new Scanner(System.in);
-                    letrasScanner[i] = myObj.next().charAt(0);
-                }
-                for (int i=0; i<letrasScanner.length; i++){
-                    for (int j=0; j<5; j++){
-                        if (letrasScanner[i] == letrasVogais[j]) {
-                            letrasScanner[i] = ' ';//Ganbiara
-                            vogaisSoma++;
-                        }
-                    }
-                }
-                for (int i=0; i<letrasScanner.length; i++){
-                    if (letrasScanner[i] != ' ') {
-                        System.out.print(letrasScanner[i] + ", ");
-                    }
-                }
-                System.out.println("Total de Consoantes: " + (10-vogaisSoma));
+                System.out.println("Exercicio migrado para uma clase propia");
                 break;
             }
             case 5: {

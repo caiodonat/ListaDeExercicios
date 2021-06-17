@@ -18,7 +18,7 @@ public class Exercicio_10_main {
         }
     }
 
-    private static String dezenaDez(int numero) {
+    public static String dezenaDez(int numero) {
         String String;
         switch (numero){
             case 11 -> {
@@ -53,7 +53,7 @@ public class Exercicio_10_main {
         return String;
     }
 
-    private static String dezena(int numero) {
+    public static String dezena(int numero) {
         String string;
         switch (numero){
             case 2 -> {
@@ -85,7 +85,7 @@ public class Exercicio_10_main {
         return string;
     }
 
-    private static String unidade(int numero) {
+    public static String unidade(int numero) {
         String string;
         switch (numero){
             case 1 -> {

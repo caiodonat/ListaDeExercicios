@@ -1,3 +1,5 @@
+package L3_estruturaDeRepeticao;
+
 import java.util.Scanner;
 
 public class L3_estruturaDeRepeticao {

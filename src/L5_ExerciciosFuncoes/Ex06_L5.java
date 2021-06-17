@@ -2,9 +2,9 @@ package L5_ExerciciosFuncoes;
 
 import java.util.Scanner;
 
-public class Exercicio_06 {
+public class Ex06_L5 {
     public static void main(String[] args) {
-        boolean denovo = false;
+        char repetirDenovo;
         do {
             System.out.println("Digite um horaio, no formato 24 horas (14:30, 12:25, 02:05)");
             Scanner myScanner = new Scanner(System.in);
@@ -14,13 +14,8 @@ public class Exercicio_06 {
             System.out.println(horasInt[0] + ":" + horasInt[1] + amPm);
 
             System.out.println("Deseja repetir o codigo? (N-Não, S-Sim)");
-            char repetirDenovo = myScanner.next().charAt(0);
-            if (repetirDenovo == 'n'){
-                denovo = false;
-            } else if (repetirDenovo == 's'){
-                denovo = true;
-            }
-        }while (denovo);
+            repetirDenovo = myScanner.next().charAt(0);
+        }while (repetirDenovo == 's');
     }
 
     private static String amOuPm(int amPm) {
