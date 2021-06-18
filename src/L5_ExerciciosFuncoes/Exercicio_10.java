@@ -1,6 +1,9 @@
 package L5_ExerciciosFuncoes;
 
 import java.util.Scanner;
+
+import static java.lang.Math.random;
+
 public class Exercicio_10 {
     public static void main(String[] args) {
         System.out.println("Jogo Craps");
@@ -10,7 +13,7 @@ public class Exercicio_10 {
         System.out.println("~Dados lançados~");
         int resultadoDado;
 
-        resultadoDado = (int) (Math.random()*(12-1))+2;
+        resultadoDado = (int) (random()*(12-1))+2;
         System.out.println(resultadoDado);
 
         if (resultadoDado == 7 || resultadoDado == 11){
@@ -23,7 +26,7 @@ public class Exercicio_10 {
             while (!(resultadoDado == 7)){
                 System.out.println("Digite 'L' para lançar os dados novamente");
                 lancarDados = myScanner.next();
-                resultadoDado = (int) (Math.random()*(12-1))+2;
+                resultadoDado = (int) (random()*(12-1))+2;
                 System.out.println(resultadoDado);
                 if (resultadoDado == 7){
                     System.out.println("Você Perdeu");
