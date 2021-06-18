@@ -13,7 +13,7 @@ L = Linha | C = Coluna
 
 a logica é essa: o numero que sera exibido é o numero da linha,
  */
-public class Exercicio_01 {
+public class Ex01_L5 {
 
     public void repeticao(int numRepeticoes){
         for (int i=0; i<numRepeticoes; i++){//Variavel 'i' equivale ao numero de linhas (i = L)

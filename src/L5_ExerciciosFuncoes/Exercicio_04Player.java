@@ -19,7 +19,7 @@ public class Exercicio_04Player {
         System.out.print("Digite um \"numero real\"; ");
         float numeroDigitado = myScanner.nextFloat();
 
-        exer04.setNumero(numeroDigitado);
+        exer04.Ex_04_L5_Core(numeroDigitado);
 
         System.out.printf("Numero è %s", exer04.getMensagemFinal());
     }

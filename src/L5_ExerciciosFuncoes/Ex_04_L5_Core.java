@@ -5,7 +5,7 @@ public class Ex_04_L5_Core {
     private float numeroDigitadoP;
     private String mensagemFinalP;
 
-    public void setNumero(float numero) {
+    public void Ex_04_L5_Core(float numero) {
         this.numeroDigitadoP = numero;
     }
 
