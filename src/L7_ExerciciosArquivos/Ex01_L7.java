@@ -42,8 +42,20 @@ public class Ex01_L7 {
         return linhas;
     }
 
-    public void closeFile(String diretorioFile) throws IOException{
-        FileWriter myWritter = new FileWriter(diretorioFile);
-        myWritter.close();
+    public boolean intSplit(String linha){
+        String[] inSplitS = linha.split("\\.");
+        if (inSplitS.length != 4){
+            return false;
+        }
+        int[] ipSplitInt = new int[inSplitS.length];
+        for (int i = 0; i < inSplitS.length; i++){
+            ipSplitInt[i] = Integer.parseInt(inSplitS[i]);
+        }
+        for (int i = 0; i < 4; i++){
+            if (!(ipSplitInt[i] >= 0 && ipSplitInt[i] <= 255)){
+                return false;
+            }
+        }
+        return true;
     }
 }
