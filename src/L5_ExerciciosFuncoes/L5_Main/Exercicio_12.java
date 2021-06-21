@@ -1,4 +1,4 @@
-package L5_ExerciciosFuncoes;
+package L5_ExerciciosFuncoes.L5_Main;
 
 import java.util.Locale;
 import java.util.Scanner;

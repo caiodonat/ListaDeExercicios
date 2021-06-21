@@ -1,6 +1,6 @@
 package L5_ExerciciosFuncoes;
 
-public class Ex_04_L5_Core {
+public class Ex04_L5 {
 
     private float numeroDigitadoP;
     private String mensagemFinalP;

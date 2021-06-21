@@ -1,11 +1,11 @@
-package L5_ExerciciosFuncoes;
+package L5_ExerciciosFuncoes.L5_Main;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Ex6V2_L5 {
+public class Ex06_L5_v2 {
     public static void main(String[] args) throws ParseException {
         String dataString;
         System.out.println("Digite um horaio, no formato 24 horas (HH:mm, 12:25, 02:05)");

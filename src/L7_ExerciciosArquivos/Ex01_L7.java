@@ -11,27 +11,39 @@ import java.util.List;
 public class Ex01_L7 {
     private String nameFileP;
 
-    public void criarFile(String nameFile) throws IOException {
-        File myFile = new File(nameFile + ".txt");
+    public void criarFile(String diretorioFile) throws IOException {
+        File myFile = new File(diretorioFile);
         myFile.createNewFile();
-        this.nameFileP = nameFile;
+        this.nameFileP = diretorioFile;
     }
 
-    public void escreverEmFile(String texto) throws  IOException{
-        FileWriter myWritter = new FileWriter(this.nameFileP + ".txt");
+    public void escreverEmFile(String texto, String diretorioFile) throws  IOException{
+        FileWriter myWritter = new FileWriter(diretorioFile);
         myWritter.write(texto);
         myWritter.close();
     }
 
-    public void deletarFile(String diretorioDoArquivo) throws IOException{
-        File myFile = new File(diretorioDoArquivo + ".txt");
+    public void escreverEmFileArray(String[] array, String diretorioFile) throws IOException {
+        FileWriter myWritter = new FileWriter(diretorioFile);
+        for (String linha : array){
+            myWritter.write(linha + "\n");
+        }
+        myWritter.close();
+    }
+
+    public void deletarFile(String diretorioFile) throws IOException{
+        File myFile = new File(diretorioFile );
         myFile.delete();
     }
 
-    public List<String> lerFile(String diretorioDoArquivo) throws IOException{
-        Path caminho = Paths.get(diretorioDoArquivo + ".txt");
+    public List<String> lerFile(String diretorioFile) throws IOException{
+        Path caminho = Paths.get(diretorioFile);
         List<String> linhas = Files.readAllLines(caminho);
         return linhas;
     }
 
+    public void closeFile(String diretorioFile) throws IOException{
+        FileWriter myWritter = new FileWriter(diretorioFile);
+        myWritter.close();
+    }
 }

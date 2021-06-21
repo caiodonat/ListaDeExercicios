@@ -1,9 +1,7 @@
-package L5_ExerciciosFuncoes;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Ex_04_L5_CoreTest {
+public class Ex04_L5_Test {
 
     @Test
     public void setNumero() {
