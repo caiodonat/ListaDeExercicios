@@ -1,4 +1,4 @@
-package L7_ExerciciosArquivos;
+package L7_ExerciciosArquivos.Ex01;
 
 import java.io.File;
 import java.io.FileWriter;

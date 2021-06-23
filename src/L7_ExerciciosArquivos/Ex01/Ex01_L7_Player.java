@@ -1,4 +1,4 @@
-package L7_ExerciciosArquivos;
+package L7_ExerciciosArquivos.Ex01;
 
 import java.util.List;
 
@@ -13,8 +13,10 @@ public class Ex01_L7_Player {
             diretorioFile2 = "/home/caio/Documents/GitHub/ListaDeExercicios/src/L7_ExerciciosArquivos/Ex01_L7_TxtSaida.txt";
 
             List<String> arquivo1 = ex01_L7.lerFile(diretorioFile1);
+
             StringBuilder ipValidos = new StringBuilder();
             ipValidos.append("[Endereços válidos:]\n");
+
             StringBuilder ipInvalidos =  new StringBuilder();
             ipInvalidos.append("[Endereços inválidos:]\n");
 
